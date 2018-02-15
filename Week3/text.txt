@@ -1,0 +1,26 @@
+I'm curious to see how politics influence people on their reading materials. If we search the name of the current president Donald Trump on Amazon books, we can find as many as six pages of results. He co-authored most of these books. I believe that if people are curious about their presidential candidate, frequent library visitors might be interested in book by him or about him.
+
+Trump's campaign started in June 2015 and since then he has been a frequent visitor of media headlines. I assume that a correlation between major milestones during his campaign and the checked-in/out records of his books in the Seattle Public Library.
+
+SELECT
+     Title, COUNT(bibNumber) AS Counts, bibNumber, Itemtype
+FROM
+     spl_2016.inraw
+ WHERE
+     title = 'Trump The Art of the Deal'
+         OR title = 'Trump Think Like a Billionaire'
+         OR title = 'Youve Been Trumped'
+ GROUP BY title , bibNumber , itemtype
+ ORDER BY Counts DESC
+ LIMIT 1000
+
+--
+MySQL Queries
+Processing time
+--
+Sketches and work-in-progress screenshots of your project with descriptions
+--
+Final results & Analysis
+--
+Please zip your processing code to include data folder for "ready to run". Add the zip file as an attachment.
+
