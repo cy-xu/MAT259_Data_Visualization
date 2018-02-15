@@ -13,11 +13,11 @@ float[] horizonalLines;
 
 void setup() {
   //fullScreen();
-  size(1440, 800);
+  size(1440, 800, P3D);
   background(30, 30, 30, 10);
   // frameRate(4);
 
-  base = 0.6 * height;
+  base = 0.5 * height;
 
   colors = new color[6];
   colors[0] = #f8f8f8; // gray background
@@ -75,6 +75,13 @@ void setup() {
 void draw() {
   background(200, 100);
 
+  // Change height of the camera with mouseY
+  camera(30.0, map(mouseY, 0, height, -height, height), 220.0, // eyeX, eyeY, eyeZ
+    0.0, 0.0, 0.0, // centerX, centerY, centerZ
+    0.0, 1.0, 0.0); // upX, upY, upZ
+
+  translate(-width/1.5, -height/2.0, 0);
+
   fill(colors[0], 100);
   stroke(200, 100);
   rectMode(CORNERS);
@@ -96,7 +103,7 @@ void draw() {
   drawGoogleCurve();
 
   // draw verticle line based on mouseX
-  drawMouseVert();
+  //drawMouseVert();
 
   drawLibrary();
   drawLibrary2();
