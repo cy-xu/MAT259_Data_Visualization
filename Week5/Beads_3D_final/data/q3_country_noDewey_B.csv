@@ -1,0 +1,133 @@
+"year(cout)","month(cout)","callNumber","title","Mexico","Ireland","Spain","Israel","Egypt","China","Cuba","Iraq","Japan"
+2006,1,"B Se687","Golden inches the China memoir of Grace Service",1,3,1,3,1,6,2,2,4
+2006,2,"B AL101S 2003","Mayada daughter of Iraq one womans survival under Saddam Hussein",1,6,0,1,2,12,1,2,6
+2006,3,"B P2751F 2004","St Patrick of Ireland a biography",2,13,3,0,1,17,4,2,8
+2006,4,"B B6194B 2001","Beyond the stone arches an American missionary doctor in China 1892 1932",1,0,1,1,3,20,3,0,2
+2006,5,"B N298T","Nefertiti Egypts sun queen",0,0,2,0,1,12,1,0,6
+2006,6,"B Se313","On Gold Mountain the 100 year odyssey of a Chinese American family",2,6,0,1,1,23,4,1,5
+2006,7,"B K8364S 2001","Dragonhead the true story of the godfather of Chinese crime his rise and fall",2,3,5,5,2,24,1,2,2
+2006,8,"B N298T","Nefertiti Egypts sun queen",0,3,5,3,1,18,5,1,4
+2006,9,"B H6151B 2000","Hirohito and the making of modern Japan",0,0,4,1,1,17,1,1,2
+2006,10,"B D6327H 2006","Disraeli the Victorian Dandy who became prime minister",1,1,6,4,3,17,2,1,4
+2006,11,"B W8464W 1989","Fifth Chinese daughter",0,4,3,4,2,13,3,0,5
+2006,12,"B C4307L 2006","Madame Chiang Kai Shek Chinas eternal first lady",2,2,5,2,1,18,2,0,4
+2007,1,"B D459W","De Shazer the Doolittle raider who turned missionary a true and thrilling story of how the practical demonstration of the law of love is bringing international understanding and the spirit of Christ to Japan",1,2,2,1,1,9,1,1,3
+2007,2,"B D2987","Walled gardens scenes from an Anglo Irish childhood",2,5,1,2,0,12,2,2,3
+2007,3,"B C4306F 2004","Chiang Kai shek Chinas generalissimo and the nation he lost",2,10,1,6,0,22,5,0,5
+2007,4,"B M2677L","Falling leaves the true story of an unwanted Chinese daughter Luo ye gui gen",1,3,1,3,0,12,5,3,7
+2007,5,"B T999S","Dragon lady the life and legend of the last empress of China",2,0,2,1,0,16,1,0,4
+2007,6,"B W846","Fifth Chinese daughter",0,2,5,1,1,17,3,0,3
+2007,7,"B T189C 2002","Cuba diaries an American housewife in Havana",0,1,4,4,1,16,2,2,2
+2007,8,"B Es64A","Minor heresies major departures a China mission boyhood",2,4,1,2,4,25,6,1,5
+2007,9,"B C196M 2002","Empress of Farewells the story of Charlotte Empress of Mexico",3,5,1,1,2,15,3,3,3
+2007,10,"B T189C 2002","Cuba diaries an American housewife in Havana",0,2,1,2,1,11,1,1,1
+2007,11,"B Om13C 2003","Granuaile Irelands Pirate Queen c 1530 1603",6,5,1,1,2,18,0,1,1
+2007,12,"B P2751F 2004","St Patrick of Ireland a biography",1,1,1,0,6,21,3,2,5
+2008,1,"B F833F 2007","Revolution of hope the life faith and dreams of a Mexican president",8,2,1,3,4,17,4,2,4
+2008,2,"B L5106","Chinese playground a memoir",5,3,2,1,1,23,1,1,4
+2008,3,"B Se543","autobiography of Federico Sanchez and the Communist underground in Spain",2,4,9,7,1,21,2,0,4
+2008,4,"B D632BL","Disraeli",7,4,7,1,1,21,3,1,2
+2008,5,"B C4307L 2006","Madame Chiang Kai Shek Chinas eternal first lady",3,2,5,3,2,27,1,0,4
+2008,6,"B C4307L 2006","Madame Chiang Kai Shek Chinas eternal first lady",1,3,8,0,0,25,3,2,6
+2008,7,"B N1388","Egypts destiny a personal statement",1,0,9,3,3,20,0,6,2
+2008,8,"B Se313","On Gold Mountain the 100 year odyssey of a Chinese American family",1,2,5,2,2,38,1,6,7
+2008,9,"B C594T 2008","Cleopatra last queen of Egypt",0,5,2,2,9,20,2,4,4
+2008,10,"B Se313","On Gold Mountain the 100 year odyssey of a Chinese American family",2,6,10,6,11,20,1,4,2
+2008,11,"B L5106","Chinese playground a memoir",0,2,4,5,8,23,3,2,5
+2008,12,"B Se313","On Gold Mountain the 100 year odyssey of a Chinese American family",0,3,2,1,7,12,3,2,0
+2009,1,"B K619K 2005","woman warrior China men",2,4,2,3,6,24,1,3,3
+2009,2,"B C594T 2008","Cleopatra last queen of Egypt",4,6,0,7,10,19,0,5,3
+2009,3,"B K619K 2005","woman warrior China men",1,5,1,12,5,21,2,4,3
+2009,4,"B Se313","On Gold Mountain the 100 year odyssey of a Chinese American family",0,6,0,4,2,10,1,1,5
+2009,5,"B K619K 2005","woman warrior China men",3,3,1,6,5,14,3,3,1
+2009,6,"B P2756B 2008","Irelands saint the essential biography of St Patrick",0,9,8,2,8,17,0,6,3
+2009,7,"B C6945Ca","Michael Collins the man who made Ireland",1,6,3,1,6,24,5,2,4
+2009,8,"B C43B","Strong man of China the story of Chiang Kai shek",2,9,3,1,5,20,4,2,0
+2009,9,"B N564Aa","Letters from Egypt a journey on the Nile 1849 1850",1,3,4,0,4,14,2,0,0
+2009,10,"B G156G 2003","Midlife Irish discovering my family and myself",0,4,5,0,5,12,2,1,1
+2009,11,"B D632H","Disraeli and his world",3,3,4,2,2,22,5,2,1
+2009,12,"B C4307P 2009","last empress Madame Chiang Kai Shek and the birth of modern China",0,4,2,3,0,21,4,1,1
+2010,1,"B N564Aa","Letters from Egypt a journey on the Nile 1849 1850",0,3,2,2,3,28,4,1,6
+2010,2,"B H6151B 2000","Hirohito and the making of modern Japan",0,3,2,2,6,26,0,0,2
+2010,3,"B W8464W 1989","Fifth Chinese daughter",1,6,2,3,6,34,1,1,3
+2010,4,"B C4307P 2009","last empress Madame Chiang Kai Shek and the birth of modern China",1,5,1,2,5,37,1,0,5
+2010,5,"B Ak42","Akhenaten King of Egypt",3,2,0,0,3,35,2,0,4
+2010,6,"B B8555S 2010","Pearl Buck in China journey to the good earth",1,1,2,3,5,32,1,2,2
+2010,7,"B M9415D 2008","Rupert Murdochs China adventures how the worlds most powerful media mogul lost a fortune and found a wife",0,2,2,2,3,35,2,1,3
+2010,8,"B B8555S 2010","Pearl Buck in China journey to the good earth",1,1,1,2,2,35,4,0,3
+2010,9,"B B8555S 2010","Pearl Buck in China journey to the good earth",0,3,1,1,1,40,2,3,2
+2010,10,"B Sm543","song for Mary an Irish American memory",1,2,8,0,4,46,1,1,2
+2010,11,"B M2677","Falling leaves the true story of an unwanted Chinese daughter",1,3,3,2,4,36,1,3,6
+2010,12,"B B8555S 2010","Pearl Buck in China journey to the good earth",2,5,5,1,5,32,2,0,4
+2011,1,"B Se31S 1996","On Gold Mountain the one hundred year odyssey of my Chinese American family",1,5,6,2,2,32,7,1,0
+2011,2,"B Se31S 1996","On Gold Mountain the one hundred year odyssey of my Chinese American family",1,5,10,1,2,26,0,0,3
+2011,3,"B C37943P","King Charles III of Spain an enlightened despot",1,6,11,1,5,33,2,2,6
+2011,4,"B B8555S 2010","Pearl Buck in China journey to the good earth",1,4,5,2,4,22,1,1,1
+2011,5,"B St4596","Fun in a Chinese laundry",0,1,5,1,3,33,1,0,4
+2011,6,"B Am51G 2008","Yehuda Amichai the making of Israels national poet",2,2,4,2,1,30,1,1,1
+2011,7,"B W6746","O come ye back to Ireland our first year in County Clare",3,4,7,1,4,26,1,0,1
+2011,8,"B B8555S 2010","Pearl Buck in China journey to the good earth",2,0,6,1,4,23,2,0,5
+2011,9,"B T2121AL","To school through the fields an Irish country childhood",0,4,1,1,2,15,0,1,3
+2011,10,"B W6746","O come ye back to Ireland our first year in County Clare",1,4,4,4,3,17,4,1,4
+2011,11,"B T189C 2002","Cuba diaries an American housewife in Havana",3,2,3,0,0,15,3,1,3
+2011,12,"B M2677","Falling leaves the true story of an unwanted Chinese daughter",2,1,1,3,0,26,1,1,3
+2012,1,"B M2677","Falling leaves the true story of an unwanted Chinese daughter",0,3,2,2,1,16,1,1,2
+2012,2,"B P2756B 2008","Irelands saint the essential biography of St Patrick",1,7,2,1,2,26,0,0,3
+2012,3,"B B8555S 2010","Pearl Buck in China journey to the good earth",2,5,5,1,1,31,1,0,2
+2012,4,"B M1993","Turn left at the black cow one familys journey from Beverly Hills to Ireland",2,7,0,2,4,10,2,0,6
+2012,5,"B J853Pi","James Joyces Ireland",1,4,3,0,1,26,0,0,3
+2012,6,"B D6327K 2008","Benjamin Disraeli",0,0,3,2,2,21,0,1,3
+2012,7,"B K5289K 2008","Memories of life in Lhasa under Chinese rule",7,2,0,2,2,23,0,0,2
+2012,8,"B Su71R","Sun Yat Sen liberator of China",4,4,1,6,2,23,0,2,3
+2012,9,"B Se31S 1996","On Gold Mountain the one hundred year odyssey of my Chinese American family",5,3,2,1,5,23,0,0,1
+2012,10,"B B8555S 2010","Pearl Buck in China journey to the good earth",3,3,4,0,0,19,1,2,1
+2012,11,"B Sco92","Chinese ginger jars",6,2,1,2,1,24,1,0,2
+2012,12,"B P964P","puppet emperor the life of Pu Yi last emperor of China",2,1,2,3,5,13,1,0,2
+2013,1,"B H6151B 2000","Hirohito and the making of modern Japan",8,4,0,3,4,28,5,0,2
+2013,2,"B Se31S 1996","On Gold Mountain the one hundred year odyssey of my Chinese American family",4,1,1,1,1,17,6,0,4
+2013,3,"B K619K 2005","woman warrior China men",2,4,0,2,4,20,2,0,4
+2013,4,"B W85071W 2012","When we were the Kennedys a memoir from Mexico Maine",5,2,0,0,1,21,0,1,1
+2013,5,"B W85071W 2012","When we were the Kennedys a memoir from Mexico Maine",3,2,1,2,0,18,0,1,0
+2013,6,"B Se31S 1996","On Gold Mountain the one hundred year odyssey of my Chinese American family",6,4,0,1,1,16,2,0,2
+2013,7,"B D6327K 2008","Benjamin Disraeli",3,4,6,1,1,16,6,1,4
+2013,8,"B W85071W 2012","When we were the Kennedys a memoir from Mexico Maine",7,0,0,4,2,16,4,0,3
+2013,9,"B B8555S 2010","Pearl Buck in China journey to the good earth",1,2,2,0,1,17,7,0,2
+2013,10,"B D873","passage to Egypt the life of Lucie Duff Gordon",3,3,2,2,3,11,5,1,1
+2013,11,"B W85071W 2012","When we were the Kennedys a memoir from Mexico Maine",5,10,1,3,0,31,2,0,0
+2013,12,"B B945G 2013","stray bullet William S Burroughs in Mexico",8,17,1,1,2,27,1,0,2
+2014,1,"B C4999C 2013","Empress Dowager Cixi the concubine who launched modern China",5,39,3,0,1,28,5,1,0
+2014,2,"B H969H 2013","story lately told coming of age in Ireland London and New York",4,31,1,1,0,28,1,0,1
+2014,3,"B C4999C 2013","Empress Dowager Cixi the concubine who launched modern China",3,38,5,3,1,29,1,1,1
+2014,4,"B D632W","Disraeli a biography",2,33,0,5,0,30,3,3,1
+2014,5,"B F296A 2014","Faisal I of Iraq",0,30,2,3,1,22,1,3,2
+2014,6,"B K619K 2005","woman warrior China men",13,20,2,4,2,26,3,2,3
+2014,7,"B H969H 2013","story lately told coming of age in Ireland London and New York",12,24,3,1,3,25,3,1,1
+2014,8,"B B8555S 2010","Pearl Buck in China journey to the good earth",20,16,1,1,1,24,1,0,2
+2014,9,"B T189C 2002","Cuba diaries an American housewife in Havana",10,19,1,4,2,14,4,0,2
+2014,10,"B B4521C 2014","Berenice II and the golden age of Ptolemaic Egypt",8,13,2,0,1,16,4,0,5
+2014,11,"B C4999C 2013","Empress Dowager Cixi the concubine who launched modern China",18,24,1,2,2,19,3,0,2
+2014,12,"B H6151B 2000","Hirohito and the making of modern Japan",5,16,5,4,0,11,1,1,2
+2015,1,"B Is141B","little queen Isabella II of Spain",7,14,3,5,2,24,2,0,3
+2015,2,"B H969H 2013","story lately told coming of age in Ireland London and New York",4,6,2,8,1,14,2,0,0
+2015,3,"B Se31S 1996","On Gold Mountain the one hundred year odyssey of my Chinese American family",4,18,4,9,2,14,3,0,0
+2015,4,"B H969H 2013","story lately told coming of age in Ireland London and New York",2,12,5,14,0,19,1,0,5
+2015,5,"B D6327H 2015","Mr and Mrs Disraeli a strange romance",3,12,4,3,1,19,1,2,8
+2015,6,"B H373C 1997","Hemingway in Cuba",3,11,1,6,3,11,3,0,4
+2015,7,"B Sa555S 2013","One day in December Celia SÃ‚Â nchez and the Cuban Revolution",1,9,1,7,1,21,6,0,4
+2015,8,"B D6327H 2015","Mr and Mrs Disraeli a strange romance",6,5,1,14,3,15,2,0,6
+2015,9,"B Ot6P 2015","Peter OToole hellraiser sexual outlaw Irish rebel",3,9,3,10,2,12,4,1,6
+2015,10,"B Se31S 2012","On Gold Mountain the one hundred year odyssey of my Chinese American family",8,8,2,12,1,15,2,0,3
+2015,11,"B D6327H 2015","Mr and Mrs Disraeli a strange romance",7,4,2,9,0,12,5,0,1
+2015,12,"B W85071W 2012","When we were the Kennedys a memoir from Mexico Maine",9,7,1,10,2,9,1,1,2
+2016,1,"B D6327H 2015","Mr and Mrs Disraeli a strange romance",6,2,1,12,5,17,4,1,2
+2016,2,"B C4999C 2013","Empress Dowager Cixi the concubine who launched modern China",1,5,2,5,1,18,2,0,2
+2016,3,"B F214F 2016","most wanted man in China my journey from scientist to enemy of the state",6,7,1,4,0,23,3,0,1
+2016,4,"B D632W","Disraeli a biography",2,3,2,5,0,14,6,0,4
+2016,5,"B C594T 2008","Cleopatra last queen of Egypt",3,8,0,6,5,9,1,0,1
+2016,6,"B F214F 2016","most wanted man in China my journey from scientist to enemy of the state",2,4,0,4,1,14,0,1,3
+2016,7,"B K1798B 2015","Manchu princess Japanese spy the story of Kawashima Yoshiko the cross dressing spy who commanded her own Army",1,9,2,4,2,10,1,0,4
+2016,8,"B H373H 2003","Hemingway in Cuba",4,5,1,2,0,13,6,0,2
+2016,9,"B C4999C 2013","Empress Dowager Cixi the concubine who launched modern China",2,4,1,4,0,14,2,0,1
+2016,10,"B C4999C 2013","Empress Dowager Cixi the concubine who launched modern China",2,4,4,1,1,11,3,0,4
+2016,11,"B D543B","Porfirio Diaz dictator of Mexico",4,8,1,1,1,8,5,0,5
+2016,12,"B Ot6P 2015","Peter OToole hellraiser sexual outlaw Irish rebel",2,5,0,1,0,8,4,0,2
