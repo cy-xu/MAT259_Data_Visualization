@@ -40,10 +40,10 @@ void setup() {
   borders[3] = 0.96 * height;
 
   horizonalLines = new float[4];
-  horizonalLines[0] = 0.2 * height;
-  horizonalLines[1] = 0.24 * height;
+  horizonalLines[0] = 0.22 * height;
+  horizonalLines[1] = 0.26 * height;
   horizonalLines[2] = 0.6 * height;
-  horizonalLines[3] = 0.6 * height;
+  horizonalLines[3] = 0.64 * height;
 
   verticalLines = new float[4];
   verticalLines[0] =  0.06 * width;
@@ -77,8 +77,6 @@ void setup() {
 //Refresh the canvas every frame
 void draw() {
   background(200, 100);
-
-  scale(0.3);
   translate(-width/2.0, -height/2.0, 0);
 
   pushMatrix(); // start drawing in 3D
@@ -89,7 +87,7 @@ void draw() {
   //rectMode(CORNERS);
   //rect(width*0.04, height*0.04, width*0.96, height*0.96);
 
-  //textMode(SHAPE);
+  textMode(SHAPE);
 
   //draw Google Trend
   drawGoogleCurve();
@@ -105,28 +103,26 @@ void draw() {
   pushMatrix();
   showLibrary();
   popMatrix();
-  
+
 
   pushMatrix();
-    if (camAngle() < 0) {
-    rotateX(map(camAngle(), 0, -height/4.0, 0, 0.2 * PI));
-  }
+
   drawGoogleText();
   drawEventText();
   drawLibText();
-  
+  draw2DText();
   popMatrix();
 
   // draw Time magazine cover
   drawCovers();
+  //drawWhichCover();
 
   popMatrix(); // end drawing 3D
 
   this.setMatrix(baseMat); // begin drawing 2D
-  draw2DText();
 
   // Change height of the camera with mouseY
-  camera(0.0, camAngle(), 220.0, // eyeX, eyeY, eyeZ
+  camera(0, camY(), camZ(), // eyeX, eyeY, eyeZ
     0.0, 0.0, 0.0, // centerX, centerY, centerZ
     0.0, 1.0, 0.0); // upX, upY, upZ
 

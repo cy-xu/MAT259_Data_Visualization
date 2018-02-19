@@ -1,4 +1,4 @@
-//float resizeScale(){
+//float resizeRatio(){
 
 //}
 
@@ -42,12 +42,6 @@ void drawGoogleCurve() {
   popMatrix();
 }
 
-void drawMouseVert() {
-  if (mouseInScreen()) {
-    stroke(colors[5], 80, 1);
-    line(mouseX, borders[1], mouseX, borders[3]);
-  }
-}
 
 void rotateGoogleText() {
   //camAngle = printCamera();
@@ -57,19 +51,56 @@ void rotateGoogleText() {
 }
 
 void rotateLibText() {
-  rotateX(map(camAngle(), 0.0, height, PI, 0));
+  rotateX(map(camY(), 0.0, height, PI, 0));
   //translate(0, map(mouseY, 0, height, -1/2*height, 0), 0);
   //camera(0.0, map(mouseY, 0, height, -height/4, height/8), 220.0, // eyeX, eyeY, eyeZ
 }
 
-float camAngle() {
-  float lowAngle = height/8.0;
-  float highAngle = -height/4.0;
-  if (mouseY > 0.8 * height) {
-    return lowAngle;
-  } else if (mouseY < 0.2 * height){
-  return highAngle;
+
+// scene top and bottom angles
+float camY() {
+  float highAngle = -height;
+  float midAngle = -height/2.0;
+  float lowAngle = height/2.0;
+
+  if (mouseY <= 0.2 * height) {
+    return highAngle;
+  } else if (mouseY > 0.2 * height && mouseY < 0.4 * height ) {
+    return map(mouseY, 0.2 * height, 0.4 * height, highAngle, midAngle);
+  } else if (mouseY >= 0.4 * height && mouseY <= 0.6 * height ) {
+    return midAngle;
+  } else if (mouseY > 0.6 * height && mouseY <= 0.8 * height ) {
+    return map(mouseY, 0.6 * height, 0.8 * height, midAngle, lowAngle);
   } else {
-  return map(mouseY, 0.2 * height, 0.8 * height, highAngle, lowAngle);
+    return lowAngle;
   }
-};
+}
+
+float camZ() {
+  float farPos = height * 0.9;
+  float midPos = height * 0.8;
+  float nearPos = 0.1;
+  
+  if (mouseY <= 0.2 * height) {
+    return nearPos;
+  } else if (mouseY > 0.2 * height && mouseY < 0.4 * height ) {
+    return map(mouseY, 0.2 * height, 0.4 * height, nearPos, farPos);
+  } else if (mouseY >= 0.4 * height && mouseY <= 0.6 * height ) {
+    return farPos;
+  } else if (mouseY > 0.6 * height && mouseY <= 0.8 * height ) {
+    return map(mouseY, 0.6 * height, 0.8 * height, farPos, midPos);
+  } else {
+    return midPos;
+}
+}
+
+//void zoomScene() {
+//  float lowAngle = height/8.0;
+//  float highAngle = -height/1.0;
+//  if (camAngle() < 0) {
+//    scale(map(camAngle(), 0, highAngle, 0.3, 1));
+//  } else if (camAngle() > 0) {
+//    scale(0.3);
+//    //rotateX(map(camAngle(), 0, highAngle, 0, -PI));
+//  }
+//}

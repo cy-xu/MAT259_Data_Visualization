@@ -15,7 +15,8 @@ void draw2DText() {
 
 void drawEventText() {
   pushMatrix();
-  translate(0, base * 0.6, 1);
+  //translate(0, base * 0.6, 1);
+  translate(0, 0, 1);
   textAlign(LEFT, TOP);
   fill(colors[5]);
   textSize(26);
@@ -149,8 +150,8 @@ void drawEventText() {
   //translate(0, 0.1*(horizonalLines[1]-horizonalLines[0]));
 }
 
+// TOP - Google
 void drawGoogleText() {
-  // TOP - Google
   pushMatrix();
   fill(colors[5]);
   textSize(26);
@@ -164,8 +165,8 @@ void drawGoogleText() {
   popMatrix();
 }
 
+// BOTTOM - Library
 void drawLibText() {
-  // BOTTOM - Library
   pushMatrix();
   translate(0, 0, 1);
   fill(colors[5]);

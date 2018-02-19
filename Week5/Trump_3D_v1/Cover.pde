@@ -20,14 +20,17 @@ void drawWhich() {
 }
 
 void drawCovers() {
-  if (camAngle() < 0) {
-    pushMatrix();
-    translate(mouseX, base, -timeCovers[0].height);
-    rotateX(PI/2.0);
-    timeCovers[0].resize(420, 560);
-    image(timeCovers[0], 0, 0);
-    popMatrix();
+  pushMatrix();
+  translate(verticalLines[2], base, 0);
+  //rotateX(PI/2.0);
+  timeCovers[0].resize(420, 560);
+  if (camAngle() < 0.0) {
+    tint(255, 60);
+  } else if (camAngle() > 0.0) {
+    tint(255, map(camAngle(), 0.0, height/8.0, 60.0, 255.0));
   }
+  image(timeCovers[0], 0, 0);
+  popMatrix();
 }
 
 // Time Cover
