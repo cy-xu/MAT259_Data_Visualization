@@ -13,6 +13,37 @@ void draw2DText() {
   popMatrix();
 }
 
+// TOP - Google
+void drawGoogleText() {
+  pushMatrix();
+  fill(colors[5]);
+  textSize(26);
+  textAlign(LEFT, TOP);
+  text("Google Trend", verticalLines[0], horizonalLines[0]);
+  fill(140);
+  textSize(18);
+  textAlign(LEFT, TOP);
+  String googleTrend ="The curve shows the how many times people searched 'Donald Trump' on Google every month, from January 2015 to December 2017."; 
+  text(googleTrend, verticalLines[0], horizonalLines[1], 600, 300);
+  popMatrix();
+}
+
+// BOTTOM - Library
+void drawLibText() {
+  pushMatrix();
+  translate(0, 0, 1);
+  fill(colors[5]);
+  textSize(26);
+  textAlign(LEFT, TOP);
+  text("Seattle Public Library", verticalLines[0], horizonalLines[2]);
+  fill(140);
+  textSize(18);
+  textAlign(LEFT, TOP);
+  String libData ="The bars represent the library's cheking records on Trump's books and DVDs each month over the same period of time."; 
+  text(libData, verticalLines[0], horizonalLines[3], 500, 100);
+  popMatrix();
+}
+
 void drawEventText() {
   pushMatrix();
   //translate(0, base * 0.6, 1);
@@ -148,35 +179,4 @@ void drawEventText() {
   //fill(255*7/8, 100);
   //Parallelogram(0.04*width,horizonalLines[0],verticalLines[0]-0.04*width, horizonalLines[1]/2-0.04*height,0.2);
   //translate(0, 0.1*(horizonalLines[1]-horizonalLines[0]));
-}
-
-// TOP - Google
-void drawGoogleText() {
-  pushMatrix();
-  fill(colors[5]);
-  textSize(26);
-  textAlign(LEFT, TOP);
-  text("Google Trend", verticalLines[0], horizonalLines[0]);
-  fill(140);
-  textSize(18);
-  textAlign(LEFT, TOP);
-  String googleTrend ="The curve shows the how many times people searched 'Donald Trump' on Google every month, from January 2015 to December 2017."; 
-  text(googleTrend, verticalLines[0], horizonalLines[1], 600, 300);
-  popMatrix();
-}
-
-// BOTTOM - Library
-void drawLibText() {
-  pushMatrix();
-  translate(0, 0, 1);
-  fill(colors[5]);
-  textSize(26);
-  textAlign(LEFT, TOP);
-  text("Seattle Public Library", verticalLines[0], horizonalLines[2]);
-  fill(140);
-  textSize(18);
-  textAlign(LEFT, TOP);
-  String libData ="The bars represent the library's cheking records on Trump's books and DVDs each month over the same period of time."; 
-  text(libData, verticalLines[0], horizonalLines[3], 500, 100);
-  popMatrix();
 }

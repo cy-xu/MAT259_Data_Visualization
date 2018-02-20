@@ -1,4 +1,4 @@
-PGraphics timeCover;
+PGraphics timeCover; //<>//
 Table table;
 int rows, cols;
 float[][] flMatrix;
@@ -10,15 +10,17 @@ color[] colors;
 float[] verticalLines;
 float[] horizonalLines;
 
+PImage[] coversToDraw;
+
 PMatrix3D baseMat;
 float alpha =0;
 
 void setup() {
-  fullScreen(P3D);
-  //size(860, 600, P3D);
+  //fullScreen(P3D);
+  size(860, 600, P3D);
   background(30, 30, 30, 10);
-  // frameRate(4);
-
+  //textMode(SHAPE);
+  //frameRate(60);
   // Remember the start model view matrix values
   baseMat = getMatrix(baseMat);
 
@@ -49,7 +51,7 @@ void setup() {
   verticalLines[0] =  0.06 * width;
   verticalLines[1] =  0.20 * width;
   verticalLines[2] =  0.50 * width;
-  verticalLines[3] =  0.75 * width;
+  verticalLines[3] =  0.6 * width;
 
   // import library & Google data
   table = loadTable("trump_2015_2017.csv", "header");
@@ -62,7 +64,7 @@ void setup() {
     for (int j = 0; j < flMatrix[0].length; j++) {
       //flMatrix[i][j] = log(table.getFloat(i, j+2)) + 1;
       flMatrix[i][j] = table.getFloat(i, j+2);
-      //println(flMatrix[i][j]);
+      println(flMatrix[i][j]);
     }
   }
 
@@ -87,14 +89,10 @@ void draw() {
   //rectMode(CORNERS);
   //rect(width*0.04, height*0.04, width*0.96, height*0.96);
 
-  textMode(SHAPE);
-
   //draw Google Trend
   drawGoogleCurve();
 
-  // draw library box, rotate 30 degree
-
-  // draw verticle line based on mouseX
+  //draw verticle line based on mouseX
   //drawMouseVert();
   pushMatrix();
   drawLibrary();
@@ -114,12 +112,14 @@ void draw() {
   popMatrix();
 
   // draw Time magazine cover
-  drawCovers();
   //drawWhichCover();
+  coversToDraw = drawWhichCover();
+  drawCovers();
 
   popMatrix(); // end drawing 3D
 
-  this.setMatrix(baseMat); // begin drawing 2D
+  // begin drawing 2D
+  this.setMatrix(baseMat); 
 
   // Change height of the camera with mouseY
   camera(0, camY(), camZ(), // eyeX, eyeY, eyeZ

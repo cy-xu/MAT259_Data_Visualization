@@ -79,7 +79,7 @@ float camY() {
 float camZ() {
   float farPos = height * 0.9;
   float midPos = height * 0.8;
-  float nearPos = 0.1;
+  float nearPos = height * 0.01;
   
   if (mouseY <= 0.2 * height) {
     return nearPos;
@@ -93,14 +93,3 @@ float camZ() {
     return midPos;
 }
 }
-
-//void zoomScene() {
-//  float lowAngle = height/8.0;
-//  float highAngle = -height/1.0;
-//  if (camAngle() < 0) {
-//    scale(map(camAngle(), 0, highAngle, 0.3, 1));
-//  } else if (camAngle() > 0) {
-//    scale(0.3);
-//    //rotateX(map(camAngle(), 0, highAngle, 0, -PI));
-//  }
-//}
