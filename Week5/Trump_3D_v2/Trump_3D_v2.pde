@@ -1,4 +1,18 @@
-PGraphics timeCover; //<>//
+/************************************************************************************* //<>//
+Data Visualization - Trump's Campaign in 3D                
+Tested in Processing 3                                    
+                                                     
+Author: Chengyuan Xu                        
+Supervisor: Jieliang Luo                           
+
+Purpose: Find out the correlation between major campaign events, media coverage,
+         internet trend and Seattle people's reading habits.
+
+Usage: Vertical movement of the mouse to see different information from different
+       angles, horizontal movement of the mouse to switch between different months.
+*************************************************************************************/
+
+PGraphics timeCover;
 Table table;
 int rows, cols;
 float[][] flMatrix;
