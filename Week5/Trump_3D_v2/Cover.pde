@@ -26,15 +26,24 @@ void loadCovers() {
   }
 }
 
+PImage[] coversDrawing = new PImage[2];
+
 float getTrans() {
-  if (camY() > 0) {
-    return 30.0;
+  if (mouseY <= 0.2 * height) {
+    if (coversDrawing[0] != null && ifFadeCompleted == false) {
+      float fadeRatio = 255 - ((millis() - timePast) * 1.0 / timeInterval) * 255;
+      if (fadeRatio < 30.0) {
+        ifFadeCompleted = true;
+      }
+      return fadeRatio;
+    } else {
+    return 0.0;
+    }
   } else {
-    return map(camY(), 0.0, -height, 30.0, 255.0);
+    //return map(camY(), 0.0, -height, 30.0, 255.0);
+    return 30.0;
   }
 }
-
-PImage[] coversDrawing = new PImage[2];
 
 void drawFunc(float alpha) {
   pushMatrix();
@@ -68,26 +77,20 @@ void drawCovers() {
     if (millis() > timePast + timeInterval) {
       timePast = millis();
     } else {
-      if (coversDrawing[0] != null && ifFadeCompleted == false) {
-        float fadeRatio = 255 - ((millis() - timePast) * 1.0 / timeInterval) * 255;
-        println(fadeRatio);
-        drawFunc(fadeRatio);
-        if (fadeRatio < 20.0) {
-          ifFadeCompleted = true;
-        }
-      }
+      //println(fadeRatio);
+      drawFunc(getTrans());
     }
-
-    //timePast = millis();
-    //if (coversDrawing[0] != null) {
-    //  if (millis() < timePast + timeInterval) {
-    //    float fadeRatio = 1/((millis() - timePast) / timeInterval) * 255;
-    //    drawFunc(fadeRatio);
-    //    //break;
-    //  }
-    //}
   }
 }
+
+//timePast = millis();
+//if (coversDrawing[0] != null) {
+//  if (millis() < timePast + timeInterval) {
+//    float fadeRatio = 1/((millis() - timePast) / timeInterval) * 255;
+//    drawFunc(fadeRatio);
+//    //break;
+//  }
+//}
 
 PImage[] drawWhichCover() {
   PImage[] returnedImages = new PImage[2];

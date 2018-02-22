@@ -8,8 +8,14 @@ void draw2DText() {
   fill(colors[5]);
   textSize(32);
   textAlign(LEFT, TOP);
-  String title = "How Trump's Presidential Campaign Influenced Seattle's Reading Consumption";
-  text(title, verticalLines[0], 0.06 * height, 700, 200);
+  String title = "From Political Joke to the 45th President";
+  text(title, verticalLines[0], 0.04 * height, 700, 200);
+  
+  fill(colors[5]);
+  textSize(26);
+  textAlign(RIGHT);
+  String subtitle = "How Trump's Presidential Campaign Influenced Seattle's Reading Consumption";
+  text(subtitle, 0.60 * width, 0.04 * height, 500, 200);
   popMatrix();
 }
 
@@ -20,11 +26,11 @@ void drawGoogleText() {
   textSize(26);
   textAlign(LEFT, TOP);
   text("Google Trend", verticalLines[0], horizonalLines[0]);
-  fill(140);
-  textSize(18);
+  fill(120);
+  textSize(20);
   textAlign(LEFT, TOP);
   String googleTrend ="The curve shows the how many times people searched 'Donald Trump' on Google every month, from January 2015 to December 2017."; 
-  text(googleTrend, verticalLines[0], horizonalLines[1], 600, 300);
+  text(googleTrend, verticalLines[0], horizonalLines[1], 500, 300);
   popMatrix();
 }
 
@@ -36,8 +42,8 @@ void drawLibText() {
   textSize(26);
   textAlign(LEFT, TOP);
   text("Seattle Public Library", verticalLines[0], horizonalLines[2]);
-  fill(140);
-  textSize(18);
+  fill(120);
+  textSize(20);
   textAlign(LEFT, TOP);
   String libData ="The bars represent the library's cheking records on Trump's books and DVDs each month over the same period of time."; 
   text(libData, verticalLines[0], horizonalLines[3], 500, 100);
@@ -78,14 +84,18 @@ void drawEventText() {
     break;
   case 7: 
     text("Jul 2015.", verticalLines[3], horizonalLines[2]);
-    textSize(18);
-    text("Trump officially announced his candidacy for president of the United States.", verticalLines[3], horizonalLines[3], 300, 300);
+    textSize(20);
+    text("Trump officially announced his candidacy for president of the United States. He introduced his plans to build a “great wall” on the U.S.-Mexico border.", verticalLines[3], horizonalLines[3], 500, 300);
     break;
   case 8: 
     text("Aug 2015", verticalLines[3], horizonalLines[2]);
+    textSize(20);
+    text("During the first GOP debate in Cleveland, Ohio, Trump attracted boos when he said he wouldn’t pledge to support whoever won the party’s nomination.", verticalLines[3], horizonalLines[3], 500, 300);
     break;
   case 9: 
     text("Sep 2015", verticalLines[3], horizonalLines[2]);
+    textSize(20);
+    text("Trump unveiled his tax plan from Trump Tower, promising that he would “shift the burden” to wealthy families. Of his plan, Trump said, “If you’re single and earn less than $25,000 per year, or married and jointly earn less than $50,000, you’ll not pay any income tax. Nothing.”", verticalLines[3], horizonalLines[3], 500, 300);
     break;
   case 10: 
     text("Oct 2015", verticalLines[3], horizonalLines[2]);
@@ -104,7 +114,7 @@ void drawEventText() {
     break;
   case 15: 
     text("Mar 2016", verticalLines[3], horizonalLines[2]);
-    textSize(18);
+    textSize(20);
     text("Trump won seven of the 11 states that vote on so-called Super Tuesday.", verticalLines[3], horizonalLines[3], 300, 300);
     break;
   case 16: 

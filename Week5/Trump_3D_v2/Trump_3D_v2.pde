@@ -16,13 +16,16 @@ PMatrix3D baseMat;
 float alpha =0;
 
 void setup() {
-  //fullScreen(P3D);
-  size(860, 600, P3D);
+  fullScreen(P3D);
+  //size(860, 600, P3D);
   background(30, 30, 30, 10);
-  //textMode(SHAPE);
-  //frameRate(60);
+  textMode(SHAPE);
+  smooth(4);
+
   // Remember the start model view matrix values
   baseMat = getMatrix(baseMat);
+  mouseX = 0;
+  mouseY = int(0.7 * height);
 
   base = 0.5 * height;
 
@@ -43,15 +46,15 @@ void setup() {
 
   horizonalLines = new float[4];
   horizonalLines[0] = 0.22 * height;
-  horizonalLines[1] = 0.26 * height;
+  horizonalLines[1] = 0.28 * height;
   horizonalLines[2] = 0.6 * height;
-  horizonalLines[3] = 0.64 * height;
+  horizonalLines[3] = 0.66 * height;
 
   verticalLines = new float[4];
   verticalLines[0] =  0.06 * width;
   verticalLines[1] =  0.20 * width;
   verticalLines[2] =  0.50 * width;
-  verticalLines[3] =  0.6 * width;
+  verticalLines[3] =  0.5 * width;
 
   // import library & Google data
   table = loadTable("trump_2015_2017.csv", "header");
@@ -68,7 +71,6 @@ void setup() {
     }
   }
 
-  smooth(4);
   getRectHeight();
   loadArrayList();
 
