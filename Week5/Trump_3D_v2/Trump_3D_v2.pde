@@ -45,16 +45,18 @@ void setup() {
   borders[3] = 0.96 * height;
 
   horizonalLines = new float[4];
-  horizonalLines[0] = 0.22 * height;
-  horizonalLines[1] = 0.28 * height;
+  horizonalLines[0] = 0.14 * height;
+  horizonalLines[1] = 0.20 * height;
   horizonalLines[2] = 0.6 * height;
   horizonalLines[3] = 0.66 * height;
 
-  verticalLines = new float[4];
+  verticalLines = new float[5];
   verticalLines[0] =  0.06 * width;
   verticalLines[1] =  0.20 * width;
   verticalLines[2] =  0.50 * width;
-  verticalLines[3] =  0.5 * width;
+  //verticalLines[3] =  0.5 * width;
+  verticalLines[3] =  0.06 * width;
+  verticalLines[4] =  0.64 * width;
 
   // import library & Google data
   table = loadTable("trump_2015_2017.csv", "header");
