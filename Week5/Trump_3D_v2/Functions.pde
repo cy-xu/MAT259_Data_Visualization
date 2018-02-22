@@ -1,7 +1,3 @@
-textSize(18);
-text("", verticalLines[3], horizonalLines[3], 700, 300);
-    
-
 //float resizeRatio(){
 
 //}

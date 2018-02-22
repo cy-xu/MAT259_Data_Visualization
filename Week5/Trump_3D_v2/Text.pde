@@ -122,7 +122,7 @@ void drawEventText() {
   case 14: 
     text("Feb 2016", verticalLines[3], horizonalLines[2]);
     textSize(20);
-    text("Once again at the front of the GOP pack, Trump proudly declared, “I could stand in the middle of Fifth Avenue and shoot somebody and I wouldn’t lose any voters.”", verticalLines[3], horizonalLines[3], 700, 300);
+    text("A holy fail: Trump was on the receiving end of scathing remarks from Pope Francis, who called Trump’s refugee deportation and Mexico wall plans signs that the mogul “is not Christian.”", verticalLines[3], horizonalLines[3], 700, 300);
     break;
   case 15: 
     text("Mar 2016", verticalLines[3], horizonalLines[2]);
@@ -223,12 +223,15 @@ void drawEventText() {
   case 35: 
     text("Nov 2017", verticalLines[3], horizonalLines[2]);
     textSize(18);
-    text("US implements tighter sanctions on Cuba.", verticalLines[3], horizonalLines[3], 700, 300);
+    text("US implements tighter sanctions on Cuba. / White House considers recognizing Jerusalem as Israel's capital.", verticalLines[3], horizonalLines[3], 700, 300);
     break;
   case 36: 
     text("Dec 2017", verticalLines[3], horizonalLines[2]);
     textSize(18);
-    text("", verticalLines[3], horizonalLines[3], 700, 300);
+    text("Supreme Court allows full travel ban to take effect. / Trump signs historic tax cut measure.", verticalLines[3], horizonalLines[3], 700, 300);
+    break;
+  case 37: 
+    text("Jan 2018", verticalLines[3], horizonalLines[2]);
     break;
   }
   popMatrix();
