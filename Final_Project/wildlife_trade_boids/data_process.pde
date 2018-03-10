@@ -15,14 +15,16 @@ void loadAllTrade() {
   int tempCount = 0;
   for (TableRow row : tradeData.rows()) {
     Trade t = new Trade(row);
-    if (hashMap.containsKey(t.A2B)) {
-      Trade updateTrade = hashMap.get(t.A2B);
-      updateTrade.quantity += t.quantity;
-      hashMap.put(t.A2B, updateTrade);
-    } else {
-      hashMap.put(t.A2B, t);
-      println(t.A2B, t.quantity);
-      tempCount++;
+    if (t.A2B != null) {
+      if (hashMap.containsKey(t.A2B)) {
+        Trade updateTrade = hashMap.get(t.A2B);
+        updateTrade.quantity += t.quantity;
+        hashMap.put(t.A2B, updateTrade);
+      } else {
+        hashMap.put(t.A2B, t);
+        println(t.A2B, t.quantity);
+        tempCount++;
+      }
     }
   }
   println(tempCount);
@@ -33,7 +35,7 @@ String inTop10(String A, String B) {
   if (top10.hasValue(A) && top10.hasValue(B)) {
     return A.concat("2").concat(B);
   } else {
-    return "Test";
+    return null;
   }
 }
 
