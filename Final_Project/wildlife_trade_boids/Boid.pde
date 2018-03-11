@@ -2,23 +2,28 @@ class Boid {
   PVector location;
   PVector velocity;
   PVector acceleration;
+  PVector origin, destination;
   float r;
   float maxspeed; // max speed
   float maxforce; // max steering force
+  color c;
 
-  Boid(float x, float y) {
+  Boid(PVector exporter, PVector importer, color cc) {
     acceleration = new PVector(0, 0);
     velocity = new PVector(random(-1, 1), random(-1, 1));
-    location = new PVector(x, y);
+    location = exporter.copy();
+    origin = exporter.copy();
+    destination = importer.copy();
     r = 3.0;
     maxspeed = 3;
     maxforce = 0.05;
+    c = cc;
   }
 
   void run(ArrayList<Boid> boids) {
     flock(boids);
     update();
-    borders();
+    //borders();
     render();
   }
 
@@ -30,17 +35,24 @@ class Boid {
     PVector sep = separate(boids);
     PVector ali = align(boids);
     PVector coh = cohesion(boids);
+    PVector dest = seek(destination);
 
     sep.mult(1.5);
     ali.mult(1.0);
     coh.mult(1.0);
+    dest.mult(1.0);
 
     applyForce(sep, acceleration);
     applyForce(ali, acceleration);
     applyForce(coh, acceleration);
+    applyForce(dest, acceleration);
   }
 
   void update() {
+    float toDest = location.dist(destination);
+    if (toDest < 15) {
+      location = origin.copy();
+    } 
     velocity.add(acceleration); // update velocity
     velocity.limit(maxspeed);   // limit speed
     location.add(velocity);     // update location
@@ -66,7 +78,7 @@ class Boid {
     if (count > 0) {
       steer.div((float)count);
     }
-    
+
     // as long as the vector is 
     if (steer.mag() > 0) {
       // Implement Reynolds: Steering = Desired - Velocity
@@ -138,7 +150,7 @@ class Boid {
   void render() {
     // Draw a triangle rotated in the direction of velocity
     float theta = velocity.heading2D() + radians(90);
-    fill(175);
+    fill(c);
     stroke(0);
     pushMatrix();
     translate(location.x, location.y);
@@ -152,10 +164,10 @@ class Boid {
   }
 
   // Wraparound
-  void borders() {
-    if (location.x < -r) location.x = width+r;
-    if (location.y < -r) location.y = height+r;
-    if (location.x > width+r) location.x = -r;
-    if (location.y > height+r) location.y = -r;
-  }
+  //void borders() {
+  //  if (location.x < -r) location.x = width+r;
+  //  if (location.y < -r) location.y = height+r;
+  //  if (location.x > width+r) location.x = -r;
+  //  if (location.y > height+r) location.y = -r;
+  //}
 }

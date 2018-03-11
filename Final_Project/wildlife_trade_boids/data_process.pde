@@ -2,6 +2,9 @@ Table tradeData;
 int rows, cols;
 float[][] matrix;
 float flMax, flMin = 0;
+StringList topStates = new StringList("US", "JP", "DE", "FR", "HK", "CH", "CN", "SG", "AE", "CA", "NL", "ID", "IT", "EC");
+StringList topImporters = new StringList("US", "JP", "DE", "FR", "HK", "CH", "CN", "SG", "AE", "CA");
+StringList topExporters = new StringList("NL", "ID", "IT", "US", "FR", "DE", "CN", "EC", "SG", "CH");
 
 HashMap<String, Trade> hashMap = new HashMap<String, Trade>();
 
@@ -31,8 +34,7 @@ void loadAllTrade() {
 }
 
 String inTop10(String A, String B) {
-  StringList top10 = new StringList("US", "JP", "DE", "FR", "HK", "CH", "CN", "SG", "AE", "CA", "NL", "ID", "IT", "EC");
-  if (top10.hasValue(A) && top10.hasValue(B)) {
+  if (topStates.hasValue(A) && topStates.hasValue(B)) {
     return A.concat("2").concat(B);
   } else {
     return null;
@@ -45,6 +47,9 @@ class Trade {
   String exporter;
   String A2B;
   float quantity;
+
+  Trade() {
+  }
 
   Trade(TableRow row) {
     importer = row.getString("Importer");
