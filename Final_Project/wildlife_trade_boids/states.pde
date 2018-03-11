@@ -1,5 +1,6 @@
-float top = 0.1 * height;
-float bottom = 0.9 * height;
+
+PVector otherImporter = new PVector(winWidth, winHeight/2);
+PVector otherExporter = new PVector(winWidth, winHeight/2);
 
 HashMap<String, State> stateMap = new HashMap<String, State>();
 
@@ -23,6 +24,12 @@ void drawState() {
   int boidCount;
   color c;
 
+
+  println("top = "+ top);
+  println("bottom = "+ bottom);
+  println("otherImporter = "+ otherImporter);
+  println("otherExporter = "+ otherExporter);
+
   for (Trade t : hashMap.values()) {
     tempKey = t.A2B;
     exporter = stateMap.get(t.exporter);
@@ -30,18 +37,12 @@ void drawState() {
     boidCount = int(t.quantity/100000);
     c = exporter.c;
 
-    //println("t.exporter = "+ t.exporter + ", exporter = " + exporter.codeName);
-    //println("t.importer = "+ t.importer + ", importer = " + importer.codeName);
+    origin = exporter.exporter_pos.copy();
+    destination = importer.importer_pos.copy();
 
-    PVector tempO = exporter.exporter_pos;
-    PVector tempD = importer.importer_pos;
-
-    origin = tempO.copy();
-    destination = tempD.copy();
-
-    println("t.A2B = "+ t.A2B + ", tempKey = " + tempKey);
-    println("origin is " + origin + " destination is " + destination);
-    println(boidCount + " boids added for " + tempKey);
+    //println("t.A2B = "+ t.A2B + ", tempKey = " + tempKey);
+    //println("origin is " + origin + " destination is " + destination);
+    //println(boidCount + " boids added for " + tempKey);
 
     for (int i = 0; i < int(boidCount); i++) {
       testRoute.addBoid(new Boid(origin, destination, c));
@@ -63,7 +64,7 @@ void whichState() {
       case "JP":
         State JP = new State("JP", "Japan");
         JP.importer_pos = new PVector((1+0.5) * colWidth, top);
-        JP.exporter_pos = new PVector(0, 0);
+        JP.exporter_pos = otherExporter.copy();
         JP.c = color(253, 237, 236);
         stateMap.put(code, JP);
         break;
@@ -84,7 +85,7 @@ void whichState() {
       case "HK":
         State HK = new State("HK", "Hong Kong");
         HK.importer_pos = new PVector((4+0.5) * colWidth, top);
-        HK.exporter_pos = new PVector(0, 0);
+        HK.exporter_pos = otherExporter.copy();
         HK.c = color(214, 234, 248);
         stateMap.put(code, HK);
         break;
@@ -112,14 +113,14 @@ void whichState() {
       case "AE":
         State AE = new State("AE", "United Arab Emirates");
         AE.importer_pos = new PVector((8+0.5) * colWidth, top);
-        AE.exporter_pos = new PVector(0, 0);
+        AE.exporter_pos = otherExporter.copy();
         AE.c = color(77, 182, 172);
         stateMap.put(code, AE);
         break;
       case "CA":
         State CA = new State("CA", "Canada");
         CA.importer_pos = new PVector((9+0.5) * colWidth, top);
-        CA.exporter_pos = new PVector(0, 0);
+        CA.exporter_pos = otherExporter.copy();
         CA.c = color(245, 245, 245);
         stateMap.put(code, CA);
         break;

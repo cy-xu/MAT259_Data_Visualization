@@ -23,7 +23,7 @@ class Boid {
   void run(ArrayList<Boid> boids) {
     flock(boids);
     update();
-    //borders();
+    borders();
     render();
   }
 
@@ -50,7 +50,7 @@ class Boid {
 
   void update() {
     float toDest = location.dist(destination);
-    if (toDest < 15) {
+    if (toDest < 30) {
       location = origin.copy();
     } 
     velocity.add(acceleration); // update velocity
@@ -163,11 +163,11 @@ class Boid {
     popMatrix();
   }
 
-  // Wraparound
-  //void borders() {
-  //  if (location.x < -r) location.x = width+r;
-  //  if (location.y < -r) location.y = height+r;
-  //  if (location.x > width+r) location.x = -r;
-  //  if (location.y > height+r) location.y = -r;
-  //}
+   //Wraparound
+  void borders() {
+    if (location.x < -r) location.x = width+r;
+    if (location.y < -r) location.y = height+r;
+    if (location.x > width+r) location.x = -r;
+    if (location.y > height+r) location.y = -r;
+  }
 }

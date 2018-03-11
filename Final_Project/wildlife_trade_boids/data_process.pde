@@ -34,7 +34,8 @@ void loadAllTrade() {
 }
 
 String inTop10(String A, String B) {
-  if (topStates.hasValue(A) && topStates.hasValue(B)) {
+  //if (topExporters.hasValue(A) && topImporters.hasValue(B)) {
+    if (topStates.hasValue(A) && topStates.hasValue(B)) {
     return A.concat("2").concat(B);
   } else {
     return null;
