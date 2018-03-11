@@ -7,4 +7,12 @@ void setup() {
 
   loadCSV();
   loadAllTrade();
+  
+  Flock flock;
+
+}
+
+void draw(){
+
+  flock.addBoid(new Boid(height, mouseY));
 }
