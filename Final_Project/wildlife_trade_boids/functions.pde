@@ -29,7 +29,7 @@ void whichState() {
       case "US":
         State US = new State("US", "United States of America");
         US.rank = 1;
-        US.c = color(41, 128, 185);
+        US.c = color(0, 102, 255);
         US.flag = loadImage("US.png");
         US.position = new PVector(0.6 * radius, -0.8 * radius);
         stateMap.put(code, US);
@@ -37,7 +37,7 @@ void whichState() {
       case "JP":
         State JP = new State("JP", "Japan");
         JP.rank = 2;
-        JP.c = color(253, 237, 236);
+        JP.c = color(255, 205, 210);
         JP.flag = loadImage("JP.png");
         JP.position = new PVector(1.1 * radius, -0.52 * radius);
         stateMap.put(code, JP);
@@ -45,7 +45,7 @@ void whichState() {
       case "DE":
         State DE = new State("DE", "Germany");
         DE.rank = 3;
-        DE.c = color(128, 139, 150);
+        DE.c = color(117, 117, 117);
         DE.flag = loadImage("DE.png");
         DE.position = new PVector(1.4 * radius, -0.24 * radius);
         stateMap.put(code, DE);
@@ -53,7 +53,7 @@ void whichState() {
       case "FR":
         State FR = new State("FR", "France");
         FR.rank = 4;
-        FR.c = color(253, 254, 254);
+        FR.c = color(0, 0, 153);
         FR.flag = loadImage("FR.png");
         FR.position = new PVector(1.4 * radius, 0.24 * radius);
         stateMap.put(code, FR);
@@ -77,9 +77,9 @@ void whichState() {
       case "CN":
         State CN = new State("CN", "China");
         CN.rank = 7;
-        CN.c = color(250, 128, 114);
+        CN.c = color(255, 0, 51);
         CN.flag = loadImage("CN.png");
-        CN.position = new PVector(0, 1.0 * radius);
+        CN.position = new PVector(0, 0.9 * radius);
         stateMap.put(code, CN);
         break;
       case "SG":
@@ -104,7 +104,7 @@ void whichState() {
         CA.c = color(245, 245, 245);
         CA.flag = loadImage("CA.png");
         CA.position = new PVector(-1.4 * radius, 0.24 * radius);
-        stateMap.put(code, CA);
+        stateMap.put(code, CA); 
         break;
       case "NL":
         State NL = new State("NL", "Netherlands");
@@ -118,7 +118,7 @@ void whichState() {
       case "ID":
         State ID = new State("ID", "Indonesia");
         ID.rank = 12;
-        ID.c = color(209, 196, 233);
+        ID.c = color(255, 255, 255);
         ID.flag = loadImage("ID.png");
         ID.position = new PVector(-1.1 * radius, -0.52 * radius);
         stateMap.put(code, ID);
@@ -126,7 +126,7 @@ void whichState() {
       case "IT":
         State IT = new State("IT", "Italy");
         IT.rank = 13;
-        IT.c = color(100, 181, 246);
+        IT.c = color(0, 204, 153);
         IT.flag = loadImage("IT.png");
         IT.position = new PVector(-0.6 * radius, -0.8 * radius);
         stateMap.put(code, IT);
@@ -134,9 +134,9 @@ void whichState() {
       case "EC":
         State EC = new State("EC", "Ecuador");
         EC.rank = 0;
-        EC.c = color(100, 181, 246);
+        EC.c = color(255, 235, 59);
         EC.flag = loadImage("EC.png");
-        EC.position = new PVector(0, -1.0 * radius);
+        EC.position = new PVector(0, -0.9 * radius);
         stateMap.put(code, EC);
         break;
       }
@@ -158,6 +158,6 @@ void whichState() {
     //  s.rotation = s.rank / 15.0 * PI;
     //}
     s.rotation = 0;
-    s.position = s.position.add(winWidth/2.0, winHeight/2.0, 0 );
+    //s.position = s.position.add(winWidth/2.0, winHeight/2.0, 0 );
   }
 }

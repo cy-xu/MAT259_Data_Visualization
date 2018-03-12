@@ -14,7 +14,7 @@ class Boid {
     location = exporter.copy();
     origin = exporter.copy();
     destination = importer.copy();
-    r = 3.0;
+    r = 4.0;
     maxspeed = 3;
     maxforce = 0.05;
     c = cc;
@@ -151,7 +151,7 @@ class Boid {
     // Draw a triangle rotated in the direction of velocity
     float theta = velocity.heading2D() + radians(90);
     fill(c);
-    stroke(0);
+    stroke(50);
     pushMatrix();
     translate(location.x, location.y);
     rotate(theta);
@@ -163,7 +163,7 @@ class Boid {
     popMatrix();
   }
 
-   //Wraparound
+  //Wraparound
   void borders() {
     if (location.x < -r) location.x = width+r;
     if (location.y < -r) location.y = height+r;

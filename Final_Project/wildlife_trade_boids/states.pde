@@ -26,6 +26,9 @@ void drawState() {
   State currState;
   int boidCount;
   color c;
+  PVector noise = PVector.random3D();
+  noise = noise.mult(300);
+  println(noise);
 
   for (Trade t : hashMap.values()) {
 
@@ -37,23 +40,24 @@ void drawState() {
         destination = importer.position.copy();
       } else {
         importer = null;
-        destination = origin.copy().mult(randomGaussian() * 10);
+        destination = origin.copy().mult(random(3, 4)).rotate(PI / 9.0);
       }
     } else {
       importer = stateMap.get(t.importer);
       destination = importer.position.copy();
       exporter = null;
-      origin = destination.copy().mult(randomGaussian() * 10);
+      origin = destination.copy().mult(random(5, 8));
     }
 
     tempKey = t.A2B;
     boidCount = ceil(log10(t.quantity/1000));
+    //boidCount = ceil(t.quantity/100000000);
 
-// assign color
+    // assign color
     if (topStates.hasValue(t.exporter)) {
       c = exporter.c;
     } else {
-      c = color(0);
+      c = color(188, 170, 164);
     }
 
     for (int i = 0; i < int(boidCount); i++) {

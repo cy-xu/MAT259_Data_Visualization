@@ -1,21 +1,28 @@
 import java.util.Map;
 import java.util.*;
 
-int radius = 300; 
+int radius;; 
 float top, bottom;
 Route testRoute;
 int winWidth, winHeight, topMargin;
 
-import peasy.*;
-PeasyCam cam;
+PShader blur;
+
 
 void setup() {
+  //fullScreen(P3D);
   size(1200, 800, P3D); // setup the size of the window
   background(255);
+  smooth(4);
+
+  blur = loadShader("blur.glsl"); 
+
   winWidth = width;
   winHeight = height;
   top = 0.1 * winHeight;
   bottom = 0.9 * winHeight;
+  radius = int(winHeight / 2.8);
+  //radius = int(winHeight / 5);
 
   loadCSV();
   loadAllTrade();
@@ -29,22 +36,23 @@ void setup() {
 
 void draw() {
   background(200);
-  //translate(winWidth / 2.0, top + winHeight / 2.0);
+  translate(winWidth/2.0, winHeight/2.0);
 
-  //fill(#f8f8f8, 100);
-  //stroke(200, 100);
-  //rectMode(CORNERS);
-  //rect(width*0.04, height*0.04, width*0.96, height*0.96);
-
+  // draw country flags
   for (State s : stateMap.values()) {
     pushMatrix();
     translate(s.position.x, s.position.y, 1);
-    rotate(s.rotation);
-    image(s.flag, -20, -20);
+    //rotate(s.rotation);
+
+    // draw background square
+    noStroke();
+    fill(s.c);
+    rect(12, 4, 20, 20);
+    //filter(blur);
+
+    image(s.flag, -25, -25);
     popMatrix();
   }
-
-
 
   testRoute.run();
 }
