@@ -23,7 +23,7 @@ class Boid {
   void run(ArrayList<Boid> boids) {
     flock(boids);
     update();
-    borders();
+    //borders();
     render();
   }
 

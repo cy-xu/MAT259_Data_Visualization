@@ -18,24 +18,27 @@ void loadAllTrade() {
   int tempCount = 0;
   for (TableRow row : tradeData.rows()) {
     Trade t = new Trade(row);
-    if (t.A2B != null) {
-      if (hashMap.containsKey(t.A2B)) {
-        Trade updateTrade = hashMap.get(t.A2B);
-        updateTrade.quantity += t.quantity;
-        hashMap.put(t.A2B, updateTrade);
-      } else {
-        hashMap.put(t.A2B, t);
-        println(t.A2B, t.quantity);
-        tempCount++;
+    if (t.quantity > 100) {
+      if (t.A2B != null) {
+        if (hashMap.containsKey(t.A2B)) {
+          Trade updateTrade = hashMap.get(t.A2B);
+          updateTrade.quantity += t.quantity;
+          hashMap.put(t.A2B, updateTrade);
+        } else {
+          hashMap.put(t.A2B, t);
+          println("Country " + t.A2B + " = " + t.quantity);
+          tempCount++;
+        }
       }
     }
   }
-  println(tempCount);
+  println(tempCount + " unique trade between two countries found");
 }
 
 String inTop10(String A, String B) {
   //if (topExporters.hasValue(A) && topImporters.hasValue(B)) {
-    if (topStates.hasValue(A) && topStates.hasValue(B)) {
+  //if (topStates.hasValue(A) && topStates.hasValue(B)) {
+  if (topStates.hasValue(A) || topStates.hasValue(B)) {
     return A.concat("2").concat(B);
   } else {
     return null;
