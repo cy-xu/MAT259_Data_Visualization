@@ -1,7 +1,20 @@
+/*************************************************************************************
+Data Visualization - Top Wildlife Buyers and Seller                
+Tested in Processing 3                                    
+                                                     
+Author: Chengyuan Xu                        
+Supervisor: Jieliang Luo                           
+
+Purpose: Visualize world's top wildlife importer and export and their trade in 2016.
+
+Usage: UP and DOWN arrow key to change speed, LEFT key to reset to normal speed
+*************************************************************************************/
+
 import java.util.Map;
 import java.util.*;
 
-int radius;; 
+int radius;
+; 
 float top, bottom;
 Route testRoute;
 int winWidth, winHeight, topMargin;
@@ -19,15 +32,12 @@ void setup() {
 
   winWidth = width;
   winHeight = height;
-  top = 0.1 * winHeight;
+  top = 0.05 * winHeight;
   bottom = 0.9 * winHeight;
   radius = int(winHeight / 2.8);
-  //radius = int(winHeight / 5);
 
   loadCSV();
   loadAllTrade();
-
-  //Create An ArrayList of boids for each two trade countries
 
   testRoute = new Route();
   whichState();
@@ -36,7 +46,7 @@ void setup() {
 
 void draw() {
   background(200);
-  translate(winWidth/2.0, winHeight/2.0);
+  translate(winWidth/2.0, winHeight/2.0 - top);
 
   // draw country flags
   for (State s : stateMap.values()) {
@@ -47,7 +57,7 @@ void draw() {
     // draw background square
     noStroke();
     fill(s.c);
-    rect(12, 4, 20, 20);
+    rect(23, 15, 20, 20);
     //filter(blur);
 
     image(s.flag, -25, -25);
@@ -55,15 +65,19 @@ void draw() {
   }
 
   testRoute.run();
+  draw2DText();
 }
 
-//void keyPressed() {
-//  if (key == CODED) {
-//    if (keyCode == RIGHT) {
-//      testRoute.addBoid(new Boid(new PVector(width/2, height), new PVector(width/2, 0)));
-//    }
-//    if (keyCode == LEFT) {
-//      testRoute.addBoid(new Boid(new PVector(width/2, height), new PVector(mouseX, mouseY)));
-//    }
-//  }
-//}
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      maxspeed += 0.5;
+    }
+    if (keyCode == DOWN) {
+      maxspeed -= 0.5;
+    }
+    if (keyCode == LEFT) {
+      maxspeed = 3.0;
+    }
+  }
+}

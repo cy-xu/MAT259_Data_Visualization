@@ -1,10 +1,10 @@
+float maxspeed; // max speed
 class Boid {
   PVector location;
   PVector velocity;
   PVector acceleration;
   PVector origin, destination;
   float r;
-  float maxspeed; // max speed
   float maxforce; // max steering force
   color c;
 

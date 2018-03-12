@@ -32,7 +32,7 @@ void loadAllTrade() {
       }
     }
   }
-  println(tempCount + " unique trade between two countries found");
+  println(tempCount + " unique trade between two countries found, data loading finished");
 }
 
 String inTop10(String A, String B) {
