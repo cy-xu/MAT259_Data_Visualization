@@ -1,4 +1,3 @@
-float maxspeed; // max speed
 class Boid {
   PVector location;
   PVector velocity;

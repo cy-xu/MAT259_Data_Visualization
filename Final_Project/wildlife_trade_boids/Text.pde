@@ -1,15 +1,53 @@
+void gui() {
+  hint(DISABLE_DEPTH_TEST);
+  cam.beginHUD();
+  cp5.draw();
+  cam.endHUD();
+  hint(ENABLE_DEPTH_TEST);
+}
+
+void addControls() {
+  // create a toggle and change the default look to a (on/off) switch look
+  cp5.addToggle("toggle")
+    .setPosition(winWidth/20.0, 1.6 * top)
+    .setSize(50, 20)
+    .setValue(true)
+    .setMode(ControlP5.SWITCH)
+    .setLabel("Hide Introduction") 
+    ;
+
+  //cp5.addToggle("shuffleColor")
+  //  .setPosition(winWidth/20.0, 2.8 * top)
+  //  .setSize(50, 20)
+  //  .setValue(true)
+  //  .setMode(ControlP5.SWITCH)
+  //  .setLabel("Shuffle Colors") 
+  //  ;
+
+  cp5.addSlider("maxspeed")
+    .setPosition(winWidth/20.0, 0.8 * top)
+    .setLabel("Change Boat Speed") 
+    .setWidth(50)
+    .setSize(100, 20)
+    .setRange(1, 8) // values can range from big to small as well
+    .setValue(3)
+    .setNumberOfTickMarks(8)
+    .setSliderMode(Slider.FLEXIBLE)
+    ;
+}
+
 void draw2DText() {
 
   PVector center = new PVector(winWidth/2.0, winHeight/2.0, 0);
   PVector mouse = new PVector(mouseX, mouseY, 0);
-  float dMouse = PVector.dist(center, mouse);
-  println(dMouse);
-  float alpha = map(dMouse, 500, 300, 0, 255);
+  //float dMouse = PVector.dist(center, mouse);
+  //float alpha = map(dMouse, 500, 300, 0, 255);
+  float alpha = 255;
 
   // Title
   pushMatrix();
-  translate(0, -80, -1);
-  fill(50, 50, 50, alpha);
+  translate(0, -80, -5);
+  fill(20, alpha);
   textSize(32);
   textLeading(30);
   textAlign(CENTER, CENTER);
@@ -19,7 +57,7 @@ void draw2DText() {
   popMatrix();
 
   pushMatrix();
-  translate(0, -20, -2);
+  translate(0, -20, -4);
   fill(100, alpha);
   textSize(28);
   textLeading(30);
@@ -31,7 +69,7 @@ void draw2DText() {
 
   pushMatrix();
   translate(0, winHeight / 2.2, -2);
-  fill(50, alpha);
+  fill(20, alpha);
   textSize(18);
   textLeading(22);
   textAlign(CENTER, CENTER);

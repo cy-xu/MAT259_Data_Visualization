@@ -22,6 +22,12 @@ int log10 (float x) {
   return int(log(x) / log(10));
 }
 
+//void shuffleColor() {
+//  for (State s : stateMap.values()) {
+//    s.c = color(random(255), random(255), random(255));
+//  }
+//}
+
 void whichState() {
   for (String code : topStates) {
     if (!stateMap.containsKey(code)) {
@@ -144,20 +150,6 @@ void whichState() {
   }
 
   for (State s : stateMap.values()) {
-    //if (s.rank < 3 ) {
-    //  s.rotation = s.rank / 7.0 * PI;
-    //} else if (s.rank == 3) {
-    //  s.rotation = PI / 2.0;
-    //} else if (3 < s.rank && s.rank < 7) {
-    //  s.rotation = s.rank / 7.0 * PI;
-    //} else if (6 < s.rank && s.rank < 10) {
-    //  s.rotation = s.rank / 15.0 * PI;
-    //} else if (s.rank == 10) {
-    //  s.rotation = s.rank / 15.0 * PI;
-    //} else if (10 < s.rank && s.rank < 15) {
-    //  s.rotation = s.rank / 15.0 * PI;
-    //}
     s.rotation = 0;
-    //s.position = s.position.add(winWidth/2.0, winHeight/2.0, 0 );
   }
 }

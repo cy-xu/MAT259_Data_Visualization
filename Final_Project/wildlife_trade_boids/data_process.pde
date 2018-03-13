@@ -3,8 +3,8 @@ int rows, cols;
 float[][] matrix;
 float flMax, flMin = 0;
 StringList topStates = new StringList("US", "JP", "DE", "FR", "HK", "CH", "CN", "SG", "AE", "CA", "NL", "ID", "IT", "EC");
-StringList topImporters = new StringList("US", "JP", "DE", "FR", "HK", "CH", "CN", "SG", "AE", "CA");
-StringList topExporters = new StringList("NL", "ID", "IT", "US", "FR", "DE", "CN", "EC", "SG", "CH");
+//StringList topImporters = new StringList("US", "JP", "DE", "FR", "HK", "CH", "CN", "SG", "AE", "CA");
+//StringList topExporters = new StringList("NL", "ID", "IT", "US", "FR", "DE", "CN", "EC", "SG", "CH");
 
 HashMap<String, Trade> hashMap = new HashMap<String, Trade>();
 
@@ -18,7 +18,7 @@ void loadAllTrade() {
   int tempCount = 0;
   for (TableRow row : tradeData.rows()) {
     Trade t = new Trade(row);
-    if (t.quantity > 100) {
+    //if (t.quantity > 100) {
       if (t.A2B != null) {
         if (hashMap.containsKey(t.A2B)) {
           Trade updateTrade = hashMap.get(t.A2B);
@@ -30,7 +30,7 @@ void loadAllTrade() {
           tempCount++;
         }
       }
-    }
+    //}
   }
   println(tempCount + " unique trade between two countries found, data loading finished");
 }
