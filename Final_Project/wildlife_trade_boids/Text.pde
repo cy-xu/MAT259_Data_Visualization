@@ -62,18 +62,18 @@ void draw2DText() {
   textSize(28);
   textLeading(30);
   textAlign(CENTER, CENTER);
-  String subTitle = "and their trade visualized based on UN 2016 data";
+  String subTitle = "and their trade visualized based on CITES 2016 data";
   rectMode(CENTER);
   text(subTitle, 0, 0, 0.3 * winWidth, 0.3 * winHeight);
   popMatrix();
 
   pushMatrix();
-  translate(0, winHeight / 2.2, -2);
+  translate(0, winHeight / 2.3, -2);
   fill(20, alpha);
   textSize(18);
   textLeading(22);
   textAlign(CENTER, CENTER);
-  String introduction = "Each boat (triangle) represents one trasaction between world's top 14 wildlife importers and exporters. Boats are marked in exporter's color. Boats in light gray, coming and going outside the windows represents trade between other countries/regions not shown here. Data credit: UN CITES Wildlife Trade Database 2016. Author: Chengyuan Xu";
+  String introduction = "Each boat (triangle) represents one trasaction between world's top 14 wildlife importers and exporters. Boats are marked in exporter's color. Boats in light gray, coming and going outside the windows represents trade between other countries/regions not shown here. Data credit: CITES Wildlife Trade Database 2016. Chengyuan Xu, MAT UCSB";
   rectMode(CENTER);
   text(introduction, 0, 0, 0.8 * winWidth, 0.15 * winHeight);
   popMatrix();

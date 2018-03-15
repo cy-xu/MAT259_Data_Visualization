@@ -7,7 +7,7 @@
  
  Purpose: Visualize world's top wildlife importer and export and their trade in 2016.
  
- Usage: UP and DOWN arrow key to change speed, LEFT key to reset to normal speed
+ Usage: Controls on top-left corner
  *************************************************************************************/
 
 //import java.util.Map;
@@ -28,8 +28,8 @@ PShader blur;
 boolean showIntro, shuffleAllColor;
 
 void setup() {
-  //fullScreen(P3D);
-  size(1200, 800, P3D); // setup the size of the window
+  fullScreen(P3D);
+  //size(1200, 800, P3D); // setup the size of the window
   background(255);
   smooth(4);
 
@@ -40,7 +40,7 @@ void setup() {
   winHeight = height;
   top = 0.05 * winHeight;
   bottom = 0.9 * winHeight;
-  radius = int(winHeight / 2.8);
+  radius = int(winHeight / 3.2);
 
   // set camera
   cam.setActive(false);
