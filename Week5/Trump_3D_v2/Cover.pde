@@ -22,7 +22,7 @@ void loadCovers() {
     String fileName = file.toString();
     timeCovers[i] = loadImage(fileName);
     timeCovers[i].resize(coverWidth, coverHeight);
-    println(coverWidth, coverHeight);
+    //println(coverWidth, coverHeight);
   }
 }
 

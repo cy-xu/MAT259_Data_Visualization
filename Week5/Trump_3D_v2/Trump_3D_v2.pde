@@ -1,20 +1,32 @@
 /************************************************************************************* //<>//
-Data Visualization - From Political Joke to the 45th President               
-Tested in Processing 3                                    
-                                                     
-Author: Chengyuan Xu                        
-Supervisor: Jieliang Luo                           
+ Data Visualization - From Political Joke to the 45th President               
+ Tested in Processing 3                                    
+ 
+ Author: Chengyuan Xu                        
+ Supervisor: Jieliang Luo                           
+ 
+ Purpose: Find out the correlation between major campaign events, media coverage,
+ internet trend and Seattle people's reading habits.
+ 
+ Library: Processing Video
+ 
+ Reference: Daniel Shiffman - https://github.com/shiffman/The-Nature-of-Code-Examples
+ 
+ Usage: Vertical movement of the mouse to see different information from different
+ angles, horizontal movement of the mouse to switch between different months.
+ *************************************************************************************/
 
-Purpose: Find out the correlation between major campaign events, media coverage,
-         internet trend and Seattle people's reading habits.
-
-Usage: Vertical movement of the mouse to see different information from different
-       angles, horizontal movement of the mouse to switch between different months.
-*************************************************************************************/
+// added for motion control
+import processing.video.*;
+Capture video;
+PImage prev;
+float threshold = 500;
+int motionCount = 0;
 
 PGraphics timeCover;
 Table table;
 int rows, cols;
+int wwidth, hheight;
 float[][] flMatrix;
 float curveWidth;
 float flMax, flMin = 0;
@@ -35,6 +47,17 @@ void setup() {
   background(30, 30, 30, 10);
   textMode(SHAPE);
   smooth(4);
+
+  wwidth = width;
+  hheight = height;
+  println(wwidth);
+
+  // added for motion control
+  video = new Capture(this, 640, 360);
+  video.start();
+  prev = createImage(640, 360, RGB);
+
+
 
   // Remember the start model view matrix values
   baseMat = getMatrix(baseMat);
@@ -83,7 +106,7 @@ void setup() {
     for (int j = 0; j < flMatrix[0].length; j++) {
       //flMatrix[i][j] = log(table.getFloat(i, j+2)) + 1;
       flMatrix[i][j] = table.getFloat(i, j+2);
-      println(flMatrix[i][j]);
+      //println(flMatrix[i][j]);
     }
   }
 
@@ -92,6 +115,14 @@ void setup() {
 
   // load all time magazine covers
   loadCovers();
+}
+
+// added for montion control
+void captureEvent(Capture video) {
+  prev = video.copy();
+  prev.updatePixels();
+  video.read();
+  //motion();
 }
 
 //Refresh the canvas every frame
@@ -139,6 +170,13 @@ void draw() {
   // begin drawing 2D
   this.setMatrix(baseMat); 
 
+  // added for motion control
+  pushMatrix();
+  //translate(width/2.0, height/2.0, 20);
+  //image(motion, 0, 0);
+  popMatrix();
+
+
   // Change height of the camera with mouseY
   camera(0, camY(), camZ(), // eyeX, eyeY, eyeZ
     0.0, 0.0, 0.0, // centerX, centerY, centerZ
@@ -147,4 +185,15 @@ void draw() {
   //float fov = PI/3;
   //float cameraZ = (height/2.0) / tan(fov/2.0);  
   //perspective(fov, float(width)/float(height), cameraZ/10.0, cameraZ*10.0);
+}
+
+
+void keyPressed() {
+  if (key == 'a') {
+    threshold += 20;
+  } else if (key == 'z') {
+    threshold -= 20;
+  }
+
+  println(threshold);
 }
