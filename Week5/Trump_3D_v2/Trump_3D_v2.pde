@@ -1,5 +1,5 @@
 /************************************************************************************* //<>//
-Data Visualization - Trump's Campaign in 3D                
+Data Visualization - From Political Joke to the 45th President               
 Tested in Processing 3                                    
                                                      
 Author: Chengyuan Xu                        

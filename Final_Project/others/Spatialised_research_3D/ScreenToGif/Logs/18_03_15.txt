@@ -1,0 +1,33 @@
+► Title - 
+	Import Error
+▬ Message - 
+	No imaging component suitable to complete this operation was found.
+○ Type - 
+	System.NotSupportedException
+♦ [Version] Date/Hour - 
+	[2.12.1] 03/15/2018 00:25:44
+▲ Source - 
+	PresentationCore
+▼ TargetSite - 
+	System.Windows.Media.SafeMILHandle SetupDecoderFromUriOrStream(System.Uri, System.IO.Stream, System.Windows.Media.Imaging.BitmapCacheOption, System.Guid ByRef, Boolean ByRef, System.IO.Stream ByRef, System.IO.UnmanagedMemoryStream ByRef, Microsoft.Win32.SafeHandles.SafeFileHandle ByRef)
+♠ StackTrace - 
+   at System.Windows.Media.Imaging.BitmapDecoder.SetupDecoderFromUriOrStream(Uri uri, Stream stream, BitmapCacheOption cacheOption, Guid& clsId, Boolean& isOriginalWritable, Stream& uriStream, UnmanagedMemoryStream& unmanagedMemoryStream, SafeFileHandle& safeFilehandle)
+   at System.Windows.Media.Imaging.BitmapDecoder.CreateFromUriOrStream(Uri baseUri, Uri uri, Stream stream, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, RequestCachePolicy uriCachePolicy, Boolean insertInDecoderCache)
+   at System.Windows.Media.Imaging.BitmapImage.FinalizeCreation()
+   at System.Windows.Media.Imaging.BitmapImage.EndInit()
+   at ScreenToGif.Windows.Editor.ImportFromImage(String sourceFileName, String pathTemp)
+   at ScreenToGif.Windows.Editor.InsertInternal(String fileName, String pathTemp)
+
+▬▬ Message - 
+	The component cannot be found. (Exception from HRESULT: 0x88982F50)
+○○ Type - 
+	System.Runtime.InteropServices.COMException
+▲▲ Source - 
+	
+▼▼ TargetSite - 
+	
+♠♠ StackTrace - 
+
+
+----------------------------------
+

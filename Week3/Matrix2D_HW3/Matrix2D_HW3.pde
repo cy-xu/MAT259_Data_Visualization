@@ -1,3 +1,17 @@
+/*************************************************************************************
+ Data Visualization - How Trump's Presidential Campaign 
+                      Influenced Seattle's Reading Consumption                
+ 
+ Tested in Processing 3                                    
+ 
+ Author: Chengyuan Xu                        
+ Supervisor: Jieliang Luo                           
+
+ Reference: Weihao Qiu - http://vislab.mat.ucsb.edu/2016/p1/Weihao_Qiu/index.html
+ Usage: Use month to hover over each month to see its significance.
+
+ *************************************************************************************/
+
 PGraphics timeCover;
 Table table;
 int rows, cols;
