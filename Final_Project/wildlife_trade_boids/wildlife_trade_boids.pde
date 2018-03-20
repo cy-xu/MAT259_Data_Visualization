@@ -6,6 +6,7 @@
  Supervisor: Jieliang Luo                           
  
  Purpose: Visualize world's top wildlife importer and export and their trade in 2016.
+ Reference: Daniel Shiffman - https://github.com/shiffman/The-Nature-of-Code-Examples
  
  Usage: Controls on top-left corner
  *************************************************************************************/
