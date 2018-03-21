@@ -93,3 +93,42 @@ float camZ() {
     return midPos;
 }
 }
+
+
+
+float camY2() {
+  float highAngle = -height;
+  float midAngle = -height/2.0;
+  float lowAngle = height/2.0;
+
+  if (mouseY <= 0.2 * height) {
+    return highAngle;
+  } else if (mouseY > 0.2 * height && mouseY < 0.4 * height ) {
+    return map(mouseY, 0.2 * height, 0.4 * height, highAngle, midAngle);
+  } else if (mouseY >= 0.4 * height && mouseY <= 0.6 * height ) {
+    return midAngle;
+  } else if (mouseY > 0.6 * height && mouseY <= 0.8 * height ) {
+    return map(mouseY, 0.6 * height, 0.8 * height, midAngle, lowAngle);
+  } else {
+    return lowAngle;
+  }
+}
+
+
+float camZ2() {
+  float farPos = height * 0.9;
+  float midPos = height * 0.8;
+  float nearPos = height * 0.01;
+  
+  if (mouseY <= 0.2 * height) {
+    return nearPos;
+  } else if (mouseY > 0.2 * height && mouseY < 0.4 * height ) {
+    return map(mouseY, 0.2 * height, 0.4 * height, nearPos, farPos);
+  } else if (mouseY >= 0.4 * height && mouseY <= 0.6 * height ) {
+    return farPos;
+  } else if (mouseY > 0.6 * height && mouseY <= 0.8 * height ) {
+    return map(mouseY, 0.6 * height, 0.8 * height, farPos, midPos);
+  } else {
+    return midPos;
+}
+}

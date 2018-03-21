@@ -20,7 +20,7 @@
 import processing.video.*;
 Capture video;
 PImage prev;
-float threshold = 1000;
+float threshold = 600;
 int motionCount = 0;
 
 PGraphics timeCover;
@@ -164,15 +164,15 @@ void draw() {
 
   popMatrix(); // end drawing 3D
 
-  // added for motion control
-  pushMatrix();
-  drawMotionBlob();
-  translate(0, 0, -20);
-  image(motion, 0, 0);
-  popMatrix();
-
   // begin drawing 2D
   this.setMatrix(baseMat); 
+
+  // added for motion control
+  pushMatrix();
+  translate(0, 0, 50);
+  drawMotionBlob();
+  //image(motion, 0, 0);
+  popMatrix();
 
   // Change height of the camera with mouseY
   camera(0, camY(), camZ(), // eyeX, eyeY, eyeZ

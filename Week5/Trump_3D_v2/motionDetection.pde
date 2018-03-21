@@ -1,5 +1,5 @@
 // motion compare current and previous frame to get b/w image
-PImage motion = createImage(640, 360, RGB);
+//PImage motion = createImage(640, 360, RGB);
 int motionThreshold = 60;
 int motionCount_global = 0;
 
@@ -22,7 +22,7 @@ void motion() {
 
   video.loadPixels();
   prev.loadPixels();
-  motion.loadPixels();
+  //motion.loadPixels();
 
   //loadPixels();
   // Begin loop to walk through every pixel
@@ -50,15 +50,15 @@ void motion() {
         //point(x, y);
         avgX += (video.width - 1 - x);
         avgY += y;
-        motion.pixels[newLoc] = color(255);
+        //motion.pixels[newLoc] = color(255);
         motionCount++;
       } else {
-        motion.pixels[newLoc] = color(0);
+        //motion.pixels[newLoc] = color(0);
       }
     }
   }
 
-  motion.updatePixels();
+  //motion.updatePixels();
 
   motionCount_global = motionCount;
 
@@ -72,15 +72,19 @@ void drawMotionBlob() {
 
   if (motionCount_global > threshold) {
     motionX = avgX_global;
-    motionY = avgY_global;
-    println(motionCount_global);
+    if (abs(avgY_global - motionY) > 50 ) {
+      motionY = avgY_global;
+    }
+    println("lerpY = " + lerpY);
+    println("handY = " + handY);
   }
 
-  lerpX = lerp(lerpX, motionX, 0.1); 
-  lerpY = lerp(lerpY, motionY, 0.1); 
+  lerpX = lerp(lerpX, motionX, 0.06); 
+  lerpY = lerp(lerpY, motionY, 0.06); 
 
-  handX = map(lerpX, 0, 640, 0, wwidth);
-  handY = map(lerpY, 0, 360, 0, hheight * 1.5);
+  handX = map(lerpX, 70, 570, 0, wwidth);
+  handY = map(lerpY, 80, 310, 0, hheight);
+
 
   fill(50, 100);
   strokeWeight(2.0);

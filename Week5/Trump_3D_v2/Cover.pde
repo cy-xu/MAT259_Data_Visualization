@@ -29,7 +29,7 @@ void loadCovers() {
 PImage[] coversDrawing = new PImage[2];
 
 float getTrans() {
-  if (mouseY <= 0.2 * height) {
+  if (handY <= 0.2 * height) {
     if (coversDrawing[0] != null && ifFadeCompleted == false) {
       float fadeRatio = 255 - ((millis() - timePast) * 1.0 / timeInterval) * 255;
       if (fadeRatio < 30.0) {
