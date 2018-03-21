@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+
+<HEAD>
+    <TITLE>Project Description</TITLE>
+    <link rel="stylesheet" type="text/css" media="all" href="../../newTemplate.css" />
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <div id="wrap">
+        <div class="left_column"></div>
+
+        <!-- Replace to your own title below -->
+        <div class="right_column">
+            <strong>
+                <span class="style4">How Trump's Presidential Campaign Influenced Seattle's Reading Consumption</span>
+                <br>
+            </strong>
+        </div>
+
+        <div class="line"></div>
+        <div class="left_column">
+            <strong>MAT 259, 2018</strong>
+        </div>
+
+        <!-- Replace to your name below -->
+        <div class="right_column">
+            <strong>Chengyuan Xu</strong>
+        </div>
+
+        <div class="line">
+            <hr noshade size="1">
+        </div>
+
+        <!-- Concept Section -->
+        <div class="left_column">
+            <strong>Concept</strong>
+        </div>
+        <div class="right_column">
+            <br>
+            <p>I'm curious to see how politics influence people on their reading materials. If we search the name of the current
+                president Donald Trump on Amazon books, we can find as many as six pages of results. He co-authored most
+                of these books. I believe that if people are curious about their presidential candidate, frequent library
+                visitors might be interested in book by him or about him. </p>
+            <p>Trump's campaign started in June 2015 and since then he has been a frequent visitor of media headlines. I assume
+                that a correlation between major milestones during his campaign and the checked-in/out records of his books
+                in the Seattle Public Library.
+            </p>
+        </div>
+        <div class="line">
+            <hr noshade size="1">
+        </div>
+
+        <div class="left_column">
+            <strong>Query</strong>
+        </div>
+        <div class="right_column">
+            <br>
+            <p>Since we only care about correlation between Trump's campaign and related titles, there is no need to count the
+                same title Trump: The Art of the Deal in with four different bibNumbers. Even though they are different media,
+                three books and one CD.</p>
+            <pre>
+     SELECT
+         Title, COUNT(bibNumber) AS Counts, bibNumber, Itemtype
+     FROM
+         spl_2016.inraw
+     WHERE
+         title = 'Trump The Art of the Deal'
+             OR title = 'Trump Think Like a Billionaire'
+             OR title = 'Youve Been Trumped'
+     GROUP BY title , bibNumber , itemtype
+     ORDER BY Counts DESC
+     LIMIT 1000
+            </pre>
+            <p>The modified query combines different bibNumbers of the same title into one entry. Referenced the monthly analysis
+                code from Rodger Luo's Blade Runner report, the data exported as a .cvs file from MySQL for further processing.
+            </p>
+            <pre>
+     SELECT 
+     Title,
+     COUNT(title) AS Counts,
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 1) THEN 1
+         ELSE 0
+     END) AS '2015-1',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 2) THEN 1
+         ELSE 0
+     END) AS '2015-2',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 3) THEN 1
+         ELSE 0
+     END) AS '2015-3',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 4) THEN 1
+         ELSE 0
+     END) AS '2015-4',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 5) THEN 1
+         ELSE 0
+     END) AS '2015-5',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 6) THEN 1
+         ELSE 0
+     END) AS '2015-6',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 7) THEN 1
+         ELSE 0
+     END) AS '2015-7',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 8) THEN 1
+         ELSE 0
+     END) AS '2015-8',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 9) THEN 1
+         ELSE 0
+     END) AS '2015-9',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 10) THEN 1
+         ELSE 0
+     END) AS '2015-10',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 11) THEN 1
+         ELSE 0
+     END) AS '2015-11',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2015 AND MONTH(cout) = 12) THEN 1
+         ELSE 0
+     END) AS '2015-12',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 1) THEN 1
+         ELSE 0
+     END) AS '2016-1',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 2) THEN 1
+         ELSE 0
+     END) AS '2016-2',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 3) THEN 1
+         ELSE 0
+     END) AS '2016-3',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 4) THEN 1
+         ELSE 0
+     END) AS '2016-4',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 5) THEN 1
+         ELSE 0
+     END) AS '2016-5',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 6) THEN 1
+         ELSE 0
+     END) AS '2016-6',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 7) THEN 1
+         ELSE 0
+     END) AS '2016-7',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 8) THEN 1
+         ELSE 0
+     END) AS '2016-8',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 9) THEN 1
+         ELSE 0
+     END) AS '2016-9',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 10) THEN 1
+         ELSE 0
+     END) AS '2016-10',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 11) THEN 1
+         ELSE 0
+     END) AS '2016-11',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2016 AND MONTH(cout) = 12) THEN 1
+         ELSE 0
+     END) AS '2016-12',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 1) THEN 1
+         ELSE 0
+     END) AS '2017-1',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 2) THEN 1
+         ELSE 0
+     END) AS '2017-2',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 3) THEN 1
+         ELSE 0
+     END) AS '2017-3',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 4) THEN 1
+         ELSE 0
+     END) AS '2017-4',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 5) THEN 1
+         ELSE 0
+     END) AS '2017-5',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 6) THEN 1
+         ELSE 0
+     END) AS '2017-6',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 7) THEN 1
+         ELSE 0
+     END) AS '2017-7',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 8) THEN 1
+         ELSE 0
+     END) AS '2017-8',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 9) THEN 1
+         ELSE 0
+     END) AS '2017-9',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 10) THEN 1
+         ELSE 0
+     END) AS '2017-10',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 11) THEN 1
+         ELSE 0
+     END) AS '2017-11',
+     SUM(CASE
+         WHEN (YEAR(cout) = 2017 AND MONTH(cout) = 12) THEN 1
+         ELSE 0
+     END) AS '2017-12'
+                    FROM
+     spl_2016.outraw
+                    WHERE
+     title = 'Trump The Art of the Deal'
+         OR title = 'Trump Think Like a Billionaire'
+         OR title = 'Youve Been Trumped'
+                    GROUP BY title
+                    ORDER BY Counts DESC
+                </pre>
+
+        </div>
+        <div class="line">
+            <hr noshade size="1">
+        </div>
+
+        <!-- Sketches Section -->
+        <div class="left_column">
+            <strong>Preliminary sketches</strong>
+        </div>
+        <div class="right_column">
+            <br>
+            <img src="sketch_one.jpg" width="500" />
+            <br>
+            <br>
+            <p>This is the initial sketch when I tried to figure out how to present information from four different sources:
+                Seattle Public Library, Google Trend, Campaign Milestones and Time magazine covers on a single timeline.
+                I realized that if all these elements have to stay on the same plane, then what I can bring to make this
+                flat plane more vivid is some interactive effects, like actions triggered by mouse movements.</p>
+            <br>
+        </div>
+        <div class="line">
+            <hr noshade size="1">
+        </div>
+
+        <!-- Process Section -->
+        <div class="left_column">
+            <strong>Process</strong>
+        </div>
+        <div class="right_column">
+            <br>
+            <img src="process_one.png" width="500" />
+            <br>
+            <br>
+            <p>I spent a lot time coding and little time designing. This first draft helped me realize how important coherent
+                color means to a visualization work.</p>
+            <br>
+            <img src="process_two.png" width="500" />
+            <br>
+            <br>
+            <p>This, looks more like it. I believe this would be a presentable first version of my topics.</p>
+            <br>
+        </div>
+        <div class="line">
+            <hr noshade size="1">
+        </div>
+
+        <!-- Final Section -->
+        <div class="left_column">
+            <strong>Final result</strong>
+        </div>
+        <div class="right_column">
+            <br>
+            <img src="final_one.gif" width="500" />
+            <br>
+            <br>
+            <p>This is the GIF animation that shows how user's mouse movement can bring up the bars that shows the checking
+                records of Trump related books and DVDs at he Seattle Public Library. When the mouse hover over certain months
+                that include an campaign event, text on top right will give extra information to show the significance of
+                this month, so the user may find an correlation between the Google Trend curve and the library data.</p>
+            <br>
+        </div>
+        <div class="line">
+            <hr noshade size="1">
+        </div>
+
+        <!-- Source Code Section -->
+        <div class="left_column">
+            <strong>Code</strong>
+        </div>
+        <div class="right_column">
+            <br> All work is developed within Processing
+            <br>
+            <!-- Please put the link of the source code and data below -->
+            <a href="Trump_2D.zip">Source Code + Data</a>
+            <br>
+            <br>
+        </div>
+        <div class="line">
+            <hr noshade size="1">
+        </div>
+    </div>
+    <!--END WRAP-->
+</BODY>
+
+</HTML>
