@@ -4,11 +4,11 @@
 
 boolean mouseInRect() {
   //return (mouseX > borders[0] && mouseX < borders[2] && mouseY > base);
-  return (mouseX > borders[0] && mouseX < borders[2]);
+  return (handX > borders[0] && handX < borders[2]);
 }
 
 boolean mouseInScreen() {
-  return (mouseX > borders[0] && mouseX < borders[2]);
+  return (handX > borders[0] && handX < borders[2]);
 }
 
 // draw a curve with data from Google Trend
@@ -63,14 +63,14 @@ float camY() {
   float midAngle = -height/2.0;
   float lowAngle = height/2.0;
 
-  if (mouseY <= 0.2 * height) {
+  if (handY <= 0.2 * height) {
     return highAngle;
-  } else if (mouseY > 0.2 * height && mouseY < 0.4 * height ) {
-    return map(mouseY, 0.2 * height, 0.4 * height, highAngle, midAngle);
-  } else if (mouseY >= 0.4 * height && mouseY <= 0.6 * height ) {
+  } else if (handY > 0.2 * height && handY < 0.4 * height ) {
+    return map(handY, 0.2 * height, 0.4 * height, highAngle, midAngle);
+  } else if (handY >= 0.4 * height && handY <= 0.6 * height ) {
     return midAngle;
-  } else if (mouseY > 0.6 * height && mouseY <= 0.8 * height ) {
-    return map(mouseY, 0.6 * height, 0.8 * height, midAngle, lowAngle);
+  } else if (handY > 0.6 * height && handY <= 0.8 * height ) {
+    return map(handY, 0.6 * height, 0.8 * height, midAngle, lowAngle);
   } else {
     return lowAngle;
   }
@@ -81,14 +81,14 @@ float camZ() {
   float midPos = height * 0.8;
   float nearPos = height * 0.01;
   
-  if (mouseY <= 0.2 * height) {
+  if (handY <= 0.2 * height) {
     return nearPos;
-  } else if (mouseY > 0.2 * height && mouseY < 0.4 * height ) {
-    return map(mouseY, 0.2 * height, 0.4 * height, nearPos, farPos);
-  } else if (mouseY >= 0.4 * height && mouseY <= 0.6 * height ) {
+  } else if (handY > 0.2 * height && handY < 0.4 * height ) {
+    return map(handY, 0.2 * height, 0.4 * height, nearPos, farPos);
+  } else if (handY >= 0.4 * height && handY <= 0.6 * height ) {
     return farPos;
-  } else if (mouseY > 0.6 * height && mouseY <= 0.8 * height ) {
-    return map(mouseY, 0.6 * height, 0.8 * height, farPos, midPos);
+  } else if (handY > 0.6 * height && handY <= 0.8 * height ) {
+    return map(handY, 0.6 * height, 0.8 * height, farPos, midPos);
   } else {
     return midPos;
 }

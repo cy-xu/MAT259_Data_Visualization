@@ -20,7 +20,7 @@
 import processing.video.*;
 Capture video;
 PImage prev;
-float threshold = 500;
+float threshold = 1000;
 int motionCount = 0;
 
 PGraphics timeCover;
@@ -42,22 +42,19 @@ PMatrix3D baseMat;
 float alpha =0;
 
 void setup() {
-  fullScreen(P3D);
-  //size(860, 600, P3D);
+  //fullScreen(P3D);
+  size(860, 600, P3D);
   background(30, 30, 30, 10);
   textMode(SHAPE);
   smooth(4);
 
   wwidth = width;
   hheight = height;
-  println(wwidth);
 
   // added for motion control
   video = new Capture(this, 640, 360);
   video.start();
   prev = createImage(640, 360, RGB);
-
-
 
   // Remember the start model view matrix values
   baseMat = getMatrix(baseMat);
@@ -122,7 +119,7 @@ void captureEvent(Capture video) {
   prev = video.copy();
   prev.updatePixels();
   video.read();
-  //motion();
+  motion();
 }
 
 //Refresh the canvas every frame
@@ -167,15 +164,15 @@ void draw() {
 
   popMatrix(); // end drawing 3D
 
-  // begin drawing 2D
-  this.setMatrix(baseMat); 
-
   // added for motion control
   pushMatrix();
-  //translate(width/2.0, height/2.0, 20);
-  //image(motion, 0, 0);
+  drawMotionBlob();
+  translate(0, 0, -20);
+  image(motion, 0, 0);
   popMatrix();
 
+  // begin drawing 2D
+  this.setMatrix(baseMat); 
 
   // Change height of the camera with mouseY
   camera(0, camY(), camZ(), // eyeX, eyeY, eyeZ
@@ -195,5 +192,5 @@ void keyPressed() {
     threshold -= 20;
   }
 
-  println(threshold);
+  println("threshold = " + threshold);
 }

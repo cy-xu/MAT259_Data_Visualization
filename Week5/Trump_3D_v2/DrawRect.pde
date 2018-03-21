@@ -11,7 +11,7 @@ int whichMonth() {
   
   barWidth = (width - 2 * borders[0]) / flMatrix[0].length;
   if (mouseInRect()) {
-    return int((mouseX - borders[0]) / barWidth);
+    return int((handX - borders[0]) / barWidth);
   } else {
     return 0;
   }

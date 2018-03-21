@@ -1,11 +1,17 @@
 // motion compare current and previous frame to get b/w image
 PImage motion = createImage(640, 360, RGB);
 int motionThreshold = 60;
+int motionCount_global = 0;
 
 float motionX = 0;
 float motionY = 0;
 float lerpX = 0;
 float lerpY = 0;
+float handX = 0;
+float handY = 0;
+
+float avgX_global = 0;
+float avgY_global = 0;
 
 void motion() {
 
@@ -42,7 +48,7 @@ void motion() {
         //stroke(255);
         //strokeWeight(1);
         //point(x, y);
-        avgX += x;
+        avgX += (video.width - 1 - x);
         avgY += y;
         motion.pixels[newLoc] = color(255);
         motionCount++;
@@ -51,23 +57,35 @@ void motion() {
       }
     }
   }
-  
+
   motion.updatePixels();
 
-  if (motionCount > threshold) {
-    motionX = avgX / motionCount;
-    motionY = avgY / motionCount;
-  };
+  motionCount_global = motionCount;
+
+  avgX_global = avgX / motionCount;
+  avgY_global = avgY / motionCount;
+
+  //return motion;
+}
+
+void drawMotionBlob() {
+
+  if (motionCount_global > threshold) {
+    motionX = avgX_global;
+    motionY = avgY_global;
+    println(motionCount_global);
+  }
 
   lerpX = lerp(lerpX, motionX, 0.1); 
   lerpY = lerp(lerpY, motionY, 0.1); 
 
-  fill(255, 0, 255);
+  handX = map(lerpX, 0, 640, 0, wwidth);
+  handY = map(lerpY, 0, 360, 0, hheight * 1.5);
+
+  fill(50, 100);
   strokeWeight(2.0);
   stroke(0);
-  ellipse(map(lerpX, 0, 1280, 0, wwidth), map(lerpY, 0, 720, 0, hheight), 36, 36);
-
-  //return motion;
+  ellipse(handX, handY, 36, 36);
 }
 
 float distSq(float x1, float y1, float z1, float x2, float y2, float z2) {
